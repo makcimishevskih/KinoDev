@@ -1,6 +1,6 @@
-import { ActorsT } from "./types";
+import { PersonsT } from "./types";
 
-export interface ActorsMockI {
+export interface personsMockI {
    docs: {
       id: number;
       name: string;
@@ -15,7 +15,7 @@ export interface ActorsMockI {
    pages: number;
 }
 
-export const actorsMock: ActorsMockI = {
+export const personsMock: personsMockI = {
    docs: [
       {
          id: 2941025,
@@ -104,7 +104,7 @@ export const actorsMock: ActorsMockI = {
    pages: 10,
 };
 
-export const actorById: ActorsT = {
+export const PersonById: PersonsT = {
    id: 7836,
    name: "Киану Ривз",
    enName: "Keanu Reeves",
@@ -193,7 +193,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 5515508,
@@ -202,7 +202,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 5212144,
@@ -211,7 +211,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Reef",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 5627358,
@@ -220,7 +220,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1399296,
@@ -229,7 +229,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 394368,
@@ -238,7 +238,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "John Constantine",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1047492,
@@ -247,7 +247,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 4865694,
@@ -256,7 +256,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Shadow",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1267348,
@@ -265,7 +265,7 @@ export const actorById: ActorsT = {
          rating: 7.563,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1189960,
@@ -274,7 +274,7 @@ export const actorById: ActorsT = {
          rating: 6.624,
          general: false,
          description: "Batman",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1294123,
@@ -283,7 +283,7 @@ export const actorById: ActorsT = {
          rating: 5.724,
          general: false,
          description: "Neo / Thomas Anderson",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 944043,
@@ -292,7 +292,7 @@ export const actorById: ActorsT = {
          rating: 6.262,
          general: false,
          description: "Sage",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 972796,
@@ -301,7 +301,7 @@ export const actorById: ActorsT = {
          rating: 5.714,
          general: false,
          description: "Ted",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1220126,
@@ -310,7 +310,7 @@ export const actorById: ActorsT = {
          rating: 6.199,
          general: false,
          description: "Keanu Reeves",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1161055,
@@ -319,7 +319,7 @@ export const actorById: ActorsT = {
          rating: 6.278,
          general: false,
          description: "Keanu Reeves",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1009536,
@@ -328,7 +328,7 @@ export const actorById: ActorsT = {
          rating: 6.968,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 846824,
@@ -337,7 +337,7 @@ export const actorById: ActorsT = {
          rating: 7.678,
          general: false,
          description: "Duke Caboom",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 4925498,
@@ -347,7 +347,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Keanu Reeves",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1048294,
@@ -356,7 +356,7 @@ export const actorById: ActorsT = {
          rating: 6.118,
          general: false,
          description: "Frank",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 968770,
@@ -365,7 +365,7 @@ export const actorById: ActorsT = {
          rating: 6.6,
          general: false,
          description: "Dr. Beckham",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 968791,
@@ -374,7 +374,7 @@ export const actorById: ActorsT = {
          rating: 5.019,
          general: false,
          description: "Bob",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 885658,
@@ -383,7 +383,7 @@ export const actorById: ActorsT = {
          rating: 7.138,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1009532,
@@ -392,7 +392,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "The One",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 958413,
@@ -401,7 +401,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "рассказчик / Keanu Reeves",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 970915,
@@ -410,7 +410,7 @@ export const actorById: ActorsT = {
          rating: 6.254,
          general: false,
          description: "Tex",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 893328,
@@ -419,7 +419,7 @@ export const actorById: ActorsT = {
          rating: 5.847,
          general: false,
          description: "The Dream",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 909254,
@@ -428,7 +428,7 @@ export const actorById: ActorsT = {
          rating: 5.603,
          general: false,
          description: "Keanu",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 623721,
@@ -437,7 +437,7 @@ export const actorById: ActorsT = {
          rating: 6.123,
          general: false,
          description: "Hank",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1328412,
@@ -446,7 +446,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "рассказчик",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 842551,
@@ -455,7 +455,7 @@ export const actorById: ActorsT = {
          rating: 4.689,
          general: false,
          description: "Detective Galban",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1007463,
@@ -464,7 +464,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "рассказчик",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 824402,
@@ -473,7 +473,7 @@ export const actorById: ActorsT = {
          rating: 6.659,
          general: false,
          description: "Ramsey",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 808328,
@@ -482,7 +482,7 @@ export const actorById: ActorsT = {
          rating: 6.89,
          general: false,
          description: "Narration",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 838926,
@@ -491,7 +491,7 @@ export const actorById: ActorsT = {
          rating: 5.682,
          general: false,
          description: "Evan Webber",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 762738,
@@ -500,7 +500,7 @@ export const actorById: ActorsT = {
          rating: 7.002,
          general: false,
          description: "John Wick",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1200961,
@@ -509,7 +509,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Mr. D",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 606650,
@@ -518,7 +518,7 @@ export const actorById: ActorsT = {
          rating: 6.096,
          general: false,
          description: "Donaka Mark",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 461314,
@@ -527,7 +527,7 @@ export const actorById: ActorsT = {
          rating: 6.758,
          general: false,
          description: "Kai",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 780466,
@@ -536,7 +536,7 @@ export const actorById: ActorsT = {
          rating: 5.928,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 566200,
@@ -545,7 +545,7 @@ export const actorById: ActorsT = {
          rating: 5.229,
          general: false,
          description: "John",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 950497,
@@ -554,7 +554,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 397564,
@@ -563,7 +563,7 @@ export const actorById: ActorsT = {
          rating: 6.628,
          general: false,
          description: "Chris Nadeau",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 280176,
@@ -572,7 +572,7 @@ export const actorById: ActorsT = {
          rating: 6.272,
          general: false,
          description: "Klaatu",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 81750,
@@ -581,7 +581,7 @@ export const actorById: ActorsT = {
          rating: 7.229,
          general: false,
          description: "Detective Tom Ludlow",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 958695,
@@ -590,7 +590,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: null,
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 102130,
@@ -599,7 +599,7 @@ export const actorById: ActorsT = {
          rating: 7.844,
          general: false,
          description: "Alex Wyler",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 79835,
@@ -608,7 +608,7 @@ export const actorById: ActorsT = {
          rating: 7.295,
          general: false,
          description: "Bob Arctor",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 644985,
@@ -617,7 +617,7 @@ export const actorById: ActorsT = {
          rating: 4.825,
          general: false,
          description: "Narcissus",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 86718,
@@ -626,7 +626,7 @@ export const actorById: ActorsT = {
          rating: 6.367,
          general: false,
          description: "Dogstar",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3793,
@@ -635,7 +635,7 @@ export const actorById: ActorsT = {
          rating: 7.861,
          general: false,
          description: "John Constantine",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3794,
@@ -644,7 +644,7 @@ export const actorById: ActorsT = {
          rating: 6.202,
          general: false,
          description: "Perry Lyman",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1363687,
@@ -653,7 +653,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Self",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1363688,
@@ -662,7 +662,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Self",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 63742,
@@ -671,7 +671,7 @@ export const actorById: ActorsT = {
          rating: 7.407,
          general: false,
          description: "Neo",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 2953,
@@ -680,7 +680,7 @@ export const actorById: ActorsT = {
          rating: 7.204,
          general: false,
          description: "Julian Mercer",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 325797,
@@ -689,7 +689,7 @@ export const actorById: ActorsT = {
          rating: 7.645,
          general: false,
          description: "Neo (segment 'Kid's Story')",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 316,
@@ -698,7 +698,7 @@ export const actorById: ActorsT = {
          rating: 7.627,
          general: false,
          description: "Neo",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 299,
@@ -707,7 +707,7 @@ export const actorById: ActorsT = {
          rating: 7.738,
          general: false,
          description: "Neo",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1363689,
@@ -716,7 +716,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Self",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1363696,
@@ -725,7 +725,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Self",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 477398,
@@ -734,7 +734,7 @@ export const actorById: ActorsT = {
          rating: 5.657,
          general: false,
          description: "Bob Arctor",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3795,
@@ -743,7 +743,7 @@ export const actorById: ActorsT = {
          rating: 7.74,
          general: false,
          description: "Nelson Moss",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 687,
@@ -752,7 +752,7 @@ export const actorById: ActorsT = {
          rating: 7.114,
          general: false,
          description: "Conor O'Neill",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 679,
@@ -761,7 +761,7 @@ export const actorById: ActorsT = {
          rating: 6.903,
          general: false,
          description: "Donnie Barksdale",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3796,
@@ -770,7 +770,7 @@ export const actorById: ActorsT = {
          rating: 6.325,
          general: false,
          description: "Griffin",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 800,
@@ -779,7 +779,7 @@ export const actorById: ActorsT = {
          rating: 7.553,
          general: false,
          description: "Shane Falco",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 571076,
@@ -788,7 +788,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Keanu Reeves",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 301,
@@ -797,7 +797,7 @@ export const actorById: ActorsT = {
          rating: 8.498,
          general: false,
          description: "Neo",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3798,
@@ -806,7 +806,7 @@ export const actorById: ActorsT = {
          rating: 5.871,
          general: false,
          description: "Harry",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3797,
@@ -815,7 +815,7 @@ export const actorById: ActorsT = {
          rating: 8.17,
          general: false,
          description: "Kevin Lomax",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1095,
@@ -824,7 +824,7 @@ export const actorById: ActorsT = {
          rating: 6.246,
          general: false,
          description: "Jjaks Clayton",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3591,
@@ -833,7 +833,7 @@ export const actorById: ActorsT = {
          rating: 6.256,
          general: false,
          description: "Eddie Kasalivich",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3799,
@@ -842,7 +842,7 @@ export const actorById: ActorsT = {
          rating: 7.619,
          general: false,
          description: "Paul Sutton",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3800,
@@ -851,7 +851,7 @@ export const actorById: ActorsT = {
          rating: 6.838,
          general: false,
          description: "Johnny Mnemonic",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1968,
@@ -860,7 +860,7 @@ export const actorById: ActorsT = {
          rating: 7.783,
          general: false,
          description: "Jack Traven",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3803,
@@ -869,7 +869,7 @@ export const actorById: ActorsT = {
          rating: 7.205,
          general: false,
          description: "Don John",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3801,
@@ -878,7 +878,7 @@ export const actorById: ActorsT = {
          rating: 7.203,
          general: false,
          description: "Siddhartha",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 2841,
@@ -887,7 +887,7 @@ export const actorById: ActorsT = {
          rating: 4.939,
          general: false,
          description: "Julian Gitche",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1727,
@@ -896,7 +896,7 @@ export const actorById: ActorsT = {
          rating: 7.781,
          general: false,
          description: "Jonathan Harker",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 326095,
@@ -905,7 +905,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Jeff (segment 'Rush",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3804,
@@ -914,7 +914,7 @@ export const actorById: ActorsT = {
          rating: 6.561,
          general: false,
          description: "Eric",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1990,
@@ -923,7 +923,7 @@ export const actorById: ActorsT = {
          rating: 7.853,
          general: false,
          description: "Johnny Utah",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3805,
@@ -932,7 +932,7 @@ export const actorById: ActorsT = {
          rating: 7.102,
          general: false,
          description: "Scott Favor",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3806,
@@ -941,7 +941,7 @@ export const actorById: ActorsT = {
          rating: 6.158,
          general: false,
          description: "Ted",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1618,
@@ -950,7 +950,7 @@ export const actorById: ActorsT = {
          rating: 6.708,
          general: false,
          description: "Martin Loader",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3807,
@@ -959,7 +959,7 @@ export const actorById: ActorsT = {
          rating: 6.676,
          general: false,
          description: "Marlon",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 510331,
@@ -968,7 +968,7 @@ export const actorById: ActorsT = {
          rating: 6.585,
          general: false,
          description: "Ted Logan",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 326096,
@@ -977,7 +977,7 @@ export const actorById: ActorsT = {
          rating: 6.769,
          general: false,
          description: "Kip",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3808,
@@ -986,7 +986,7 @@ export const actorById: ActorsT = {
          rating: 7.092,
          general: false,
          description: "Tod Higgins",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3809,
@@ -995,7 +995,7 @@ export const actorById: ActorsT = {
          rating: 6.584,
          general: false,
          description: "Ted 'Theodore' Logan",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3811,
@@ -1004,7 +1004,7 @@ export const actorById: ActorsT = {
          rating: 6.723,
          general: false,
          description: "Rupert Marshetta",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3812,
@@ -1013,7 +1013,7 @@ export const actorById: ActorsT = {
          rating: 6.619,
          general: false,
          description: "Chris Townsend",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3813,
@@ -1022,7 +1022,7 @@ export const actorById: ActorsT = {
          rating: 7.153,
          general: false,
          description: "Winston Connelly",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3810,
@@ -1031,7 +1031,7 @@ export const actorById: ActorsT = {
          rating: 7.83,
          general: false,
          description: "Chevalier Danceny",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1297915,
@@ -1040,7 +1040,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Kelloggs Model",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 951280,
@@ -1049,7 +1049,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Joey",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 277740,
@@ -1058,7 +1058,7 @@ export const actorById: ActorsT = {
          rating: 6.045,
          general: false,
          description: "Jesse Walker",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 1997,
@@ -1067,7 +1067,7 @@ export const actorById: ActorsT = {
          rating: 6.837,
          general: false,
          description: "Heaver",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 326097,
@@ -1076,7 +1076,7 @@ export const actorById: ActorsT = {
          rating: 5.902,
          general: false,
          description: "Eddie Talbot",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3815,
@@ -1085,7 +1085,7 @@ export const actorById: ActorsT = {
          rating: 6.65,
          general: false,
          description: "Matt",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3814,
@@ -1094,7 +1094,7 @@ export const actorById: ActorsT = {
          rating: 6.556,
          general: false,
          description: "Tommy Warneki",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 94122,
@@ -1103,7 +1103,7 @@ export const actorById: ActorsT = {
          rating: 6.498,
          general: false,
          description: "Derek",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 321833,
@@ -1112,7 +1112,7 @@ export const actorById: ActorsT = {
          rating: 5.538,
          general: false,
          description: "Jack Fenton / Jack-be-Nimble",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 295539,
@@ -1121,16 +1121,16 @@ export const actorById: ActorsT = {
          rating: 5.894,
          general: false,
          description: "Buddy Martin (в титрах: Keannu Reeves)",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 893485,
          name: "Фабрика комедии",
-         alternativeName: "Comedy Factory",
+         alternativeName: "Comedy FPersony",
          rating: null,
          general: false,
          description: "Crackers",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 3816,
@@ -1139,7 +1139,7 @@ export const actorById: ActorsT = {
          rating: 6.159,
          general: false,
          description: "Ron Petrie",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 295540,
@@ -1148,7 +1148,7 @@ export const actorById: ActorsT = {
          rating: 6.315,
          general: false,
          description: "Stereo Teen #1",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 422836,
@@ -1157,7 +1157,7 @@ export const actorById: ActorsT = {
          rating: 6.79,
          general: false,
          description: "Mugger",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 893484,
@@ -1166,7 +1166,7 @@ export const actorById: ActorsT = {
          rating: null,
          general: false,
          description: "Teen Client",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 438307,
@@ -1175,7 +1175,7 @@ export const actorById: ActorsT = {
          rating: 6.188,
          general: false,
          description: "Kip",
-         enProfession: "actor",
+         enProfession: "Person",
       },
       {
          id: 277858,
@@ -1184,7 +1184,7 @@ export const actorById: ActorsT = {
          rating: 7.859,
          general: false,
          description: "Michael Riley (17)",
-         enProfession: "actor",
+         enProfession: "Person",
       },
 
       {

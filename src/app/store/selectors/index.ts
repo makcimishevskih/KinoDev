@@ -1,1 +1,6 @@
-export { selectType, selectFavoriteMovies } from "./selectors";
+export {
+   selectType,
+   selectOrder,
+   selectSortField,
+   selectFavoriteMovies,
+} from "./selectors";

@@ -1,3 +1,6 @@
+export type OrderT = "asc" | "desc";
+export type SortFieldT = "name" | "rating" | "";
+
 export interface SpousesI {
    id: number | null;
    name: string | null;
@@ -34,7 +37,7 @@ export interface MoviesT {
    year?: number;
 }
 
-export type ActorsT = {
+export type PersonsT = {
    id: number;
    name: string | null;
    enName: string | null;
@@ -102,11 +105,11 @@ export type EnProfessionT =
    | "writer"
    | "designer"
    | "composer"
-   | "actor"
+   | "Person"
    | "editor"
    | "operator"
    | "producer"
-   | "voice_actor"
+   | "voice_Person"
    | "writer";
 export type ProfessionT =
    | "режиссеры"
@@ -119,7 +122,7 @@ export type ProfessionT =
    | "актеры дубляжа"
    | "сценаристы";
 
-export type ActorsTT = {
+export type PersonsTT = {
    id?: number | null;
    photo?: string | null;
    name?: string | null;
@@ -235,7 +238,7 @@ type FilmT = {
    genres: CountiesT[];
    countries: CountiesT[];
    seasonsInfo?: SeasonsInfoT[] | null;
-   persons?: ActorsTT[] | null;
+   persons?: PersonsTT[] | null;
    lists?: string[] | null;
    typeNumber: number;
    alternativeName: string | null;

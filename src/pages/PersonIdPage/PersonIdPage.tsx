@@ -1,17 +1,17 @@
-// import css from "./ActorIdPage.module.scss";
-// import { useGetMovieActorByIdQuery } from "@src/app/store/api/movieApi";
-// const { data } = useGetMovieActorByIdQuery(id || "");
+// import css from "./PersonIdPage.module.scss";
+// import { useGetMoviePersonByIdQuery } from "@src/app/store/api/movieApi";
+// const { data } = useGetMoviePersonByIdQuery(id || "");
 
-import { actorById } from "@src/app/config/mockActor";
+import { PersonById } from "@src/app/config/mockPerson";
 
-import Actor from "@src/widgets/Person";
+import Person from "@src/widgets/Person";
 
 // import { useParams } from "react-router-dom";
 const PersonIdPage = () => {
    // const { id } = useParams();
 
-   const data = actorById;
+   const data = PersonById;
 
-   return <Actor data={data} />;
+   return <Person data={data} />;
 };
 export default PersonIdPage;

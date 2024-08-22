@@ -1,9 +1,11 @@
-const capitalize = (str: string): string => {
+import { OrderT } from "@src/app/config/types";
+
+export const capitalize = (str: string): string => {
    if (!str) return "";
    return [...str[0].toUpperCase(), str.slice(1)].join("").trim();
 };
 
-const formatBudgetToUSD = (value: number = 0, currency = "USD") => {
+export const formatBudgetToUSD = (value: number = 0, currency = "USD") => {
    return new Intl.NumberFormat("en-US", {
       style: "currency",
       currency: currency,
@@ -14,7 +16,7 @@ const formatBudgetToUSD = (value: number = 0, currency = "USD") => {
       .join(" ");
 };
 
-const formatShort = (value: number = 0): string => {
+export const formatShort = (value: number = 0): string => {
    const formats: Record<string, string> = {
       M: "млн",
    };
@@ -29,7 +31,7 @@ const formatShort = (value: number = 0): string => {
    return `${res.slice(0, res.length - 1)}${lastElem}`;
 };
 
-function formatDate(date: Date | string): {
+export function formatDate(date: Date | string): {
    day: number;
    month: string;
    year: number;
@@ -63,16 +65,11 @@ function formatDate(date: Date | string): {
    return { day, month, year };
 }
 
-const cutZero = (str: string) => (str[0] === "0" ? str.slice(1) : str);
+export const cutZero = (str: string) => (str[0] === "0" ? str.slice(1) : str);
 
-const getActorYears = (years: number): number =>
+export const getPersonYears = (years: number): number =>
    new Date().getFullYear() - years;
 
-export {
-   capitalize,
-   formatBudgetToUSD,
-   formatShort,
-   cutZero,
-   formatDate,
-   getActorYears,
+export const sortFilmsByOrder = <T>(a: T, b: T, order: OrderT): T[] => {
+   return order === "asc" ? [a, b] : [b, a];
 };

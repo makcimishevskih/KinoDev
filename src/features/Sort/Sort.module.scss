@@ -1,0 +1,49 @@
+.sort {
+   background-color: #f2f2f2;
+   border-radius: 8px;
+   .list {
+      display: flex;
+
+      .item {
+         font-size: 20px;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         padding: 12px 20px;
+         cursor: pointer;
+         border-radius: 8px;
+         position: relative;
+         &:not(:last-child)::after {
+            position: absolute;
+
+            background-color: #ffffff;
+            top: 0;
+            right: -2px;
+            transform: translate(-50%);
+
+            content: "";
+            height: 100%;
+            width: 2px;
+         }
+
+         .title {
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 18px;
+            white-space: nowrap;
+            color: #000;
+         }
+
+         .arrow {
+            width: 20px;
+            height: 20px;
+            &.asc {
+               transform: rotate(0deg);
+            }
+            &.desc {
+               transform: rotate(180deg);
+            }
+         }
+      }
+   }
+}

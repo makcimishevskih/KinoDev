@@ -6,7 +6,7 @@ import heartFill from "../../app/assets/heart-fill.svg";
 import heartEmpty from "../../app/assets/heart-empty.svg";
 
 import { Link } from "react-router-dom";
-import Rating from "@src/widgets/FilmInfo/ui/Rating";
+import Rating from "@src/pages/FilmPage/ui/Rating";
 import {
    addFilmToFavorite,
    removeFilmFromFavorite,
@@ -57,7 +57,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
    };
 
    return (
-      <div className={css.film__wrapper}>
+      <article className={css.film__wrapper}>
          <div className={css.film}>
             <Link
                className={css.film__link}
@@ -116,7 +116,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
                </div>
             </div>
          </div>
-      </div>
+      </article>
    );
 };
 

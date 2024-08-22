@@ -1,14 +1,14 @@
 // IMAGE
-.actors {
+.Persons {
    margin: 20px 0;
 
-   .actor__wrapper {
+   .Person__wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 32px;
 
-      .actor {
+      .Person {
          position: relative;
          max-width: 200px;
          padding: 24px;
@@ -39,8 +39,8 @@
             bottom: 0;
          }
 
-         .actor__link {
-            .actor__poster {
+         .Person__link {
+            .Person__poster {
                width: 160px;
                max-height: 230px;
                overflow: hidden;

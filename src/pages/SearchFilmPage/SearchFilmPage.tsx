@@ -35,13 +35,12 @@ const SearchFilmPage = () => {
                <FilmsList films={filterFilmsData} />
                <Pagination
                   data={data.docs}
-                  pageDisplayed={3}
                   handlePage={handlePage}
+                  pageDisplayed={3}
                />
-               ;
             </div>
          ) : (
-            <NotFound>Нет фильмов данной категории</NotFound>
+            <NotFound>Фильмы данной категории не найдены</NotFound>
          )}
       </div>
    );

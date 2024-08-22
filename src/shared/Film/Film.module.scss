@@ -7,10 +7,11 @@
       min-height: 250px;
       padding: 24px;
 
+      background-color: rgba(248, 248, 248, 1);
       border-radius: 16px;
 
       &:hover {
-         background-color: #f7f7f7;
+         background-color: #eceaea;
       }
 
       &::before,

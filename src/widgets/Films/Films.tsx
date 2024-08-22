@@ -1,51 +1,65 @@
-// import { useGetMoviesQuery } from "@src/app/store/api/movieApi";
-// const { data, isLoading, error } = useGetMoviesQuery({ page, type });
 import css from "./Films.module.scss";
 
+import { movieCategoriesEnT } from "@src/app/config/types";
+import { mockTenFilms } from "@src/app/config/mockfilms";
+import { handleSorting } from "./config";
+import { useAppDispatch, useAppSelector } from "@src/app/store";
 import { usePage } from "@src/hooks/usePage";
 import { useSearchParams } from "react-router-dom";
-import { useCallback, useEffect, useState } from "react";
-import { mockTenFilms } from "@src/app/config/mockfilms";
-import { movieCategoriesEnT } from "@src/app/config/types";
+import { useEffect, useState } from "react";
+import {
+   selectOrder,
+   selectSortField,
+   selectType,
+} from "@src/app/store/selectors";
 
 import NotFound from "@src/shared/NotFound";
 import Pagination from "@src/shared/Pagination";
-import MoviesTypeList from "./ui/MoviesTypeList";
 import FilmsList from "@src/shared/FilmsList";
+import FilterSort from "@src/entities/FilterSort";
+import { changeType } from "@src/app/store/slices/moviesSlice";
 
 const Films = () => {
-   const [_, setSearchParams] = useSearchParams();
    const { page, handlePage } = usePage();
-   const [type, setType] = useState<movieCategoriesEnT>("anime");
+   const dispatch = useAppDispatch();
+   const [_, setSearchParams] = useSearchParams();
+   // const [type, setType] = useState<movieCategoriesEnT>("anime");
 
-   const data = mockTenFilms;
-
-   const changeMovieType = useCallback(
-      (type: movieCategoriesEnT) => {
-         setType(type);
-      },
-      [type],
-   );
+   const type = useAppSelector(selectType);
+   const order = useAppSelector(selectOrder);
+   const sortField = useAppSelector(selectSortField);
 
    useEffect(() => {
-      setSearchParams({ type, page: String(page) });
-   }, [type]);
+      setSearchParams({ type, page: String(page), orderBy: sortField });
+   }, [type, page, order]);
+
+   // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
+
+   const data = mockTenFilms;
 
    if (!data || data.docs.length === 0) {
       return null;
    }
 
-   const filterFilmsData = data.docs
+   const changeMovieType = (type: movieCategoriesEnT) => {
+      dispatch(changeType(type));
+   };
+
+   const filterFilmsData = [...data.docs]
+      .sort((a, b): any => handleSorting(a, b, order, sortField))
       .filter((el) => el.type === type)
-      // delete
+      // DELETE AFTER UNCOMMENT USEQUERY
       .slice(page === 1 ? 0 : page - 1 * 10, page * 10);
 
    return (
-      <main className={css.main}>
-         <MoviesTypeList
-            type={type}
-            changeMovieType={changeMovieType}
-         />
+      <section className={css.main}>
+         <div className={css.filterSort}>
+            <FilterSort
+               type={type}
+               order={order}
+               changeMovieType={changeMovieType}
+            />
+         </div>
 
          {filterFilmsData.length !== 0 ? (
             <>
@@ -59,7 +73,7 @@ const Films = () => {
          ) : (
             <NotFound>Нет фильмов данной категории</NotFound>
          )}
-      </main>
+      </section>
    );
 };
 

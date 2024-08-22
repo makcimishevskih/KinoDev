@@ -1,5 +1,3 @@
-// import {useGetRandomQuery,    useLazyGetRandomQuery,} from "@src/app/store/api/movieApi";
-// const { data, isLoading, error, refetch } = useGetRandomQuery(state.type);
 import css from "./Random.module.scss";
 
 import { mockRandomFilm } from "@src/app/config/mockRandom";
@@ -13,39 +11,43 @@ import {
 } from "@src/app/store";
 
 import Film from "@src/shared/Film";
-import MoviesTypeList from "../Films/ui/MoviesTypeList";
+// import MoviesTypeList from "../../features/MoviesTypeList";
+import Button from "@src/shared/Button";
 
+// import { useGetRandomQuery } from "@src/app/store/api/movieApi";
+// const dispatch = useAppDispatch();
+// const { data: film, isLoading, refetch } = useGetRandomQuery(type);
+import Loader from "@src/shared/Loader";
 const Random = () => {
-   const type = useAppSelector(selectType);
+   // const type = useAppSelector(selectType);
    const films = useAppSelector(selectFavoriteMovies);
-
-   console.log(JSON.stringify(films));
-   const dispatch = useAppDispatch();
 
    const film = mockRandomFilm;
 
-   if (!film) {
-      return null;
-   }
-
-   const handleChangeType = (type: movieCategoriesEnT) => {
-      dispatch(changeType(type));
-      // refetch();
-   };
+   // if (!film) {return null;}if (isLoading) {return <Loader />;}
+   // const handleChangeType = (type: movieCategoriesEnT) => {
+   // dispatch(changeType(type));
+   // refetch();
+   // };
 
    return (
-      <div className={css.random}>
+      <section className={css.random}>
          <h2 className={css.title}>Random film</h2>
-         <MoviesTypeList
-            type={type}
-            changeMovieType={handleChangeType}
-         />
 
          <Film
             film={film}
             hasInFilmsList={!!films.find((fav) => fav.id === film.id)}
          />
-      </div>
+
+         <div className={css.btns}>
+            <Button
+               color="black"
+               // onClick={() => refetch()}
+            >
+               Click
+            </Button>
+         </div>
+      </section>
    );
 };
 export default Random;

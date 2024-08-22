@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { ActorsMockI } from "@src/app/config/mockActor";
+import { personsMockI } from "@src/app/config/mockActor";
 import FilmT, {
-   ActorsT,
+   PersonsT,
    MockTenFilmsT,
    movieCategoriesEnT,
 } from "@src/app/config/types";
@@ -50,16 +50,16 @@ const movieApi = createApi({
             };
          },
       }),
-      // getMovieActorById: builder.query<FilmT, string>({
-      getMovieActorById: builder.query<ActorsT, string>({
+      // getMoviePersonById: builder.query<FilmT, string>({
+      getMoviePersonById: builder.query<PersonsT, string>({
          query(id) {
             return {
                url: `/person/${id}`,
             };
          },
       }),
-      getMovieActors: builder.query<
-         ActorsMockI,
+      getMoviePersons: builder.query<
+         personsMockI,
          { page: number; filmId: string }
       >({
          query({ page = 1, filmId = "" }) {
@@ -69,10 +69,11 @@ const movieApi = createApi({
             };
          },
       }),
-      getRandom: builder.query<FilmT, movieCategoriesEnT>({
-         query(type) {
+      getRandom: builder.query<FilmT, undefined>({
+         query() {
             return {
-               url: `/movie/random?type=${type}`,
+               // url: `/movie/random?type=${type}`,
+               url: `/movie/random`,
             };
          },
       }),
@@ -89,9 +90,9 @@ const movieApi = createApi({
 export const {
    useGetSearchQuery,
    useGetMoviesQuery,
-   useGetMovieActorsQuery,
+   useGetMoviePersonsQuery,
    useGetMovieByIdQuery,
-   useGetMovieActorByIdQuery,
+   useGetMoviePersonByIdQuery,
    useGetRandomQuery,
    useLazyGetRandomQuery,
    useGetTop250Query,

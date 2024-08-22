@@ -1,15 +1,8 @@
-// import { useParams } from "react-router-dom";
-// import { useGetMovieActorsQuery } from "@src/app/store/api/movieApi";
-// const { filmId } = useParams();
-// const { data, isLoading, error } = useGetMovieActorsQuery({
-//    page,
-//    filmId: filmId || "",
-// });
-// const docs = data && data.docs;
+// import { useParams } from "react-router-dom";import { useGetMoviePersonsQuery } from "@src/app/store/api/movieApi"; const { filmId } = useParams(); const { data, isLoading, error } = useGetMoviePersonsQuery({ page,filmId: filmId || "",});
 
 import css from "./Persons.module.scss";
 
-import { actorsMock } from "@src/app/config/mockActor";
+import { personsMock } from "@src/app/config/mockActor";
 import placeholder from "../../app/assets/placeholder.jpg";
 import { usePage } from "@src/hooks/usePage";
 
@@ -19,29 +12,29 @@ import Pagination from "@src/shared/Pagination";
 const Persons = () => {
    const { handlePage } = usePage();
 
-   const { docs } = actorsMock;
+   const { docs } = personsMock;
 
    if (!docs || docs.length === 0) {
       return null;
    }
 
    return (
-      <div className={css.actors}>
-         <div className={css.actor__wrapper}>
+      <section className={css.Persons}>
+         <div className={css.Person__wrapper}>
             {docs.map((person) => (
-               <div
+               <article
                   key={person.id}
-                  className={css.actor}
+                  className={css.Person}
                >
                   <Link
-                     className={css.actor__link}
+                     className={css.Person__link}
                      to={`/person/${person.id}`}
                   >
-                     <div className={css.actor__poster}>
+                     <div className={css.Person__poster}>
                         <img
                            className={css.img}
                            src={person.photo || placeholder}
-                           alt="actor"
+                           alt="Person"
                         />
                      </div>
 
@@ -58,7 +51,7 @@ const Persons = () => {
                         </div>
                      </div>
                   </Link>
-               </div>
+               </article>
             ))}
          </div>
 
@@ -67,7 +60,7 @@ const Persons = () => {
             pageDisplayed={2}
             handlePage={handlePage}
          />
-      </div>
+      </section>
    );
 };
 export default Persons;

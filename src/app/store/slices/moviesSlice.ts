@@ -1,14 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import FilmT, { movieCategoriesEnT } from "@src/app/config/types";
+import FilmT, {
+   SortFieldT,
+   OrderT,
+   movieCategoriesEnT,
+} from "@src/app/config/types";
 
 export interface StateI {
-   type: movieCategoriesEnT;
+   order: OrderT;
+   sortField: SortFieldT;
    favoriteFilms: FilmT[];
+   type: movieCategoriesEnT;
 }
 
 const initialState: StateI = {
    type: "movie",
    favoriteFilms: [],
+   order: "asc",
+   sortField: "",
 } as StateI;
 1;
 
@@ -18,6 +26,12 @@ export const moviesSlice = createSlice({
    reducers: {
       changeType: (state, { payload }: PayloadAction<movieCategoriesEnT>) => {
          state.type = payload;
+      },
+      changeOrder: (state) => {
+         state.order = state.order === "asc" ? "desc" : "asc";
+      },
+      changSortField: (state, { payload }: PayloadAction<SortFieldT>) => {
+         state.sortField = payload;
       },
       addFilmToFavorite: (state, { payload }: PayloadAction<FilmT>) => {
          const hasFilm = state.favoriteFilms.find(
@@ -40,6 +54,11 @@ export const moviesSlice = createSlice({
    },
 });
 
-export const { changeType, addFilmToFavorite, removeFilmFromFavorite } =
-   moviesSlice.actions;
+export const {
+   changeType,
+   addFilmToFavorite,
+   removeFilmFromFavorite,
+   changeOrder,
+   changSortField,
+} = moviesSlice.actions;
 export default moviesSlice.reducer;

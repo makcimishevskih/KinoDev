@@ -1,18 +1,19 @@
 import css from "./Person.module.scss";
 
-import { ActorsT } from "@src/app/config/types";
-import { capitalize, formatDate, getActorYears } from "@src/utils/helpers";
+import placeholder from "../../app/assets/placeholder.jpg";
+import { PersonsT } from "@src/app/config/types";
+import { capitalize, formatDate, getPersonYears } from "@src/utils/helpers";
 
-import AboutInfoContainer from "../FilmInfo/ui/MainFilmInfo/ui/DetailedInfo/ui/AboutInfoContainer";
+import AboutInfoContainer from "../../pages/FilmPage/ui/MainFilmInfo/ui/DetailedInfo/ui/AboutInfoContainer";
 import { Link } from "react-router-dom";
 
 interface PersonsProps {
-   data: ActorsT;
+   data: PersonsT;
 }
 
 const Person = ({ data }: PersonsProps) => {
    const { day, month, year } = formatDate(data.birthday || "");
-   const actorYears = getActorYears(year);
+   const PersonYears = getPersonYears(year);
 
    const movies =
       data.movies && data.movies.length > 10
@@ -37,7 +38,7 @@ const Person = ({ data }: PersonsProps) => {
                <li>
                   {day} {month}, {year}
                </li>
-               <li style={{ listStyle: "initial" }}>{actorYears} лет(года)</li>
+               <li style={{ listStyle: "initial" }}>{PersonYears} лет(года)</li>
                <span></span>
             </ul>
          ),
@@ -68,14 +69,14 @@ const Person = ({ data }: PersonsProps) => {
    ];
 
    return (
-      <div className={css.actor}>
+      <div className={css.Person}>
          <div className={css.media}>
             {/* LINK TO POSTERS */}
             <div className={css.media__link}>
                <div className={css.media__imgContainer}>
                   <img
                      className={css.media__img}
-                     src={data.photo || ""}
+                     src={data.photo || placeholder}
                      alt="film"
                   />
                </div>
