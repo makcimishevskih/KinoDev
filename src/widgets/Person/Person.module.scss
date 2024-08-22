@@ -1,0 +1,91 @@
+.actor {
+   margin-top: 30px;
+   padding: 0 8px;
+   width: 100%;
+
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px;
+
+   min-height: 205px;
+   padding: 8px;
+
+   .media {
+      height: 100%;
+
+      &__imgContainer {
+         width: 222px;
+         height: 320px;
+         overflow: hidden;
+      }
+      &__img {
+         width: 100%;
+         height: 100%;
+         display: block;
+         object-fit: cover;
+      }
+   }
+
+   .info {
+      .title {
+         font-size: 36px;
+         font-weight: 700;
+         line-height: 42px;
+         letter-spacing: -0.5px;
+         display: flex;
+         flex-wrap: wrap;
+      }
+
+      & > .subtitle {
+         margin-top: 12px;
+         display: flex;
+         align-items: center;
+         gap: 8px;
+         font-size: 18px;
+         font-weight: 400;
+         color: rgba(0, 0, 0, 0.6);
+         letter-spacing: -0.2px;
+         font-style: italic;
+      }
+      .wrapper {
+         min-height: 205px;
+         display: flex;
+         flex-wrap: wrap;
+         margin-top: 32px;
+
+         .details {
+            .subtitle {
+               font-size: 22px;
+               line-height: 28px;
+               color: #000;
+               font-weight: 600;
+               font-style: normal;
+               margin-bottom: 10px;
+            }
+         }
+
+         .film {
+            padding: 12px 0 4px;
+            margin-top: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 200px;
+
+            .title {
+               margin-bottom: 4px;
+               font-size: 15px;
+               line-height: 20px;
+            }
+            .list {
+               display: flex;
+               flex-direction: column;
+               gap: 2px;
+               .link {
+                  font-size: 13px;
+               }
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,40 @@
+.navigation {
+   .list {
+      margin: 24px 44px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      .item {
+         font-size: 15px;
+         font-weight: 500;
+         line-height: 18px;
+         overflow: hidden;
+         color: #000;
+         background-color: #fff;
+         cursor: pointer;
+         border-radius: 12px;
+         white-space: nowrap;
+
+         .link {
+            padding: 8px 20px;
+            display: block;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+
+            &.active {
+               color: #fff;
+               background: linear-gradient(
+                  150deg,
+                  #e45808 16.44%,
+                  #e4e00f 63.42%
+               );
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,17 @@
+export const footerLinks = [
+   { label: "Вакансии", link: "#" },
+   { label: "Реклама", link: "#" },
+   { label: "Соглашение", link: "#" },
+   { label: "Правила рекомендаций", link: "#" },
+   { label: "Справка", link: "#" },
+   { label: "Блог", link: "#" },
+   { label: "Кинопоиск PRO", link: "#" },
+   { label: "Предложения", link: "#" },
+   { label: "Все фильмы", link: "#" },
+   { label: "Все сериалы", link: "#" },
+   { label: "Все мультфильмы", link: "#" },
+   { label: "Передачи и шоу", link: "#" },
+   { label: "Рекомендации кино", link: "#" },
+   { label: "Акции и подписка", link: "#" },
+   { label: "Служба поддержки", link: "#" },
+];

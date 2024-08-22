@@ -1,0 +1,48 @@
+import css from "./User.module.scss";
+import placeholder from "../../app/assets/placeholder.jpg";
+
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+
+import Loader from "@src/shared/Loader";
+import Button from "@src/shared/Button";
+import { Navigate } from "react-router-dom";
+
+const User = () => {
+   const { user, isLoading, logout } = useKindeAuth();
+
+   if (isLoading) {
+      return <Loader />;
+   }
+
+   if (!user && !isLoading) {
+      return <Navigate to="/" />;
+   }
+
+   return (
+      <div className={css.user}>
+         <div className={css.img__wrapper}>
+            <img
+               className={css.img}
+               src={user?.picture || placeholder}
+               alt="avatar"
+            />
+         </div>
+         <div className={css.user__info}>
+            <h2 className={css.title}>
+               <span>{user?.given_name}</span>
+               <span> {user?.family_name}</span>
+            </h2>
+            <p className={css.email}>{user && user?.email}</p>
+            <div className={css.btns}>
+               <Button
+                  title="Logout"
+                  color="black"
+                  onClick={logout}
+               />
+            </div>
+         </div>
+      </div>
+   );
+};
+
+export default User;

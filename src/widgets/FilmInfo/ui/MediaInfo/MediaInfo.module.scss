@@ -1,0 +1,34 @@
+.media {
+   &__Link {
+   }
+   &__imgContainer {
+      width: 222px;
+      height: 320px;
+      overflow: hidden;
+   }
+   &__img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+   }
+
+   .video__link {
+      display: block;
+      margin-top: 20px;
+
+      .video__container {
+         iframe {
+            display: block;
+            width: 222px;
+            height: 200px;
+         }
+      }
+      .video__caption {
+         cursor: pointer;
+         margin-top: 8px;
+         font-size: 1.1rem;
+         color: #000;
+      }
+   }
+}

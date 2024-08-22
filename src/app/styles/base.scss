@@ -1,0 +1,73 @@
+// LINE CLAMP
+.line-clamp-1,
+.line-clamp-2,
+.line-clamp-10 {
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+}
+
+.line-clamp-1 {
+   line-clamp: 1;
+   -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+   line-clamp: 2;
+   -webkit-line-clamp: 2;
+}
+
+.line-clamp-10 {
+   line-clamp: 10;
+   -webkit-line-clamp: 10;
+}
+
+// MARGINS
+.mt-4 {
+   margin-top: 4px;
+}
+.mb-4 {
+   margin-bottom: 4px;
+}
+.ml-4 {
+   margin-left: 4px;
+}
+.mr-4 {
+   margin-right: 4px;
+}
+
+.mt-8 {
+   margin-top: 8px;
+}
+.mb-8 {
+   margin-bottom: 8px;
+}
+.ml-8 {
+   margin-left: 8px;
+}
+.mr-8 {
+   margin-right: 8px;
+}
+
+.mt-12 {
+   margin-top: 12px;
+}
+.mb-12 {
+   margin-bottom: 12px;
+}
+.ml-12 {
+   margin-left: 12px;
+}
+.mr-12 {
+   margin-right: 12px;
+}
+
+.m-4 {
+   margin: 4px;
+}
+.m-8 {
+   margin: 8px;
+}
+.m-12 {
+   margin: 8px;
+}

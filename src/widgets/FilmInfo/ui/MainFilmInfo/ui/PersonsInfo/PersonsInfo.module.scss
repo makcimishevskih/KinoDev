@@ -1,0 +1,27 @@
+.actors {
+   padding: 32px 0 4px;
+}
+
+.wrapper {
+   margin-top: 12px;
+   display: flex;
+   flex-direction: column;
+   gap: 4px;
+   width: 200px;
+}
+
+.title {
+   margin-bottom: 4px;
+   font-size: 15px;
+   line-height: 20px;
+}
+
+.link {
+   font-size: 13px;
+   line-height: 15px;
+}
+
+.more {
+   font-size: 13px;
+   color: #f50;
+}

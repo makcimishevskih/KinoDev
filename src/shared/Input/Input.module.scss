@@ -1,0 +1,25 @@
+.wrapper {
+   .input__wrapper {
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+      background-color: hsla(0, 0%, 100%, 0.15);
+
+      .input {
+         width: 100%;
+         padding: 8px 0 8px 16px;
+
+         font-size: 15px;
+         color: #fff;
+         border: none;
+         outline: none;
+         background: transparent;
+
+         &:focus {
+         }
+      }
+      .icon__search {
+      }
+   }
+}

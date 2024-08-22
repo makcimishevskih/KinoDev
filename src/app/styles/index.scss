@@ -1,0 +1,69 @@
+@import "reset";
+@import "base";
+
+html,
+#root,
+.app {
+   height: 100%;
+}
+
+html {
+   font-family: "Noto Sans", sans-serif;
+   font-optical-sizing: auto;
+   font-weight: 400;
+   font-style: normal;
+   background-color: #f4f4f4;
+}
+
+.app {
+   display: flex;
+   flex-direction: column;
+   overflow-x: hidden;
+}
+
+.container {
+   max-width: 1024px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 12px 20px;
+   background-color: #fff;
+   flex-grow: 1;
+}
+
+button {
+   border: none;
+   padding: 0;
+   background-color: transparent;
+}
+
+button,
+a {
+   color: #000;
+
+   &:hover {
+      opacity: 0.5;
+   }
+}
+
+// BULLETS PAGINATION WRAPPER
+.swiper-pagination.swiper-pagination-bullets-dynamic.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+   top: 95%;
+   // BULLETS PAGINATION DOTS // 1. PREV // 2. NEXT // 3. ACTIVE
+   .swiper-pagination-bullet.swiper-pagination-bullet-active-prev,
+   .swiper-pagination-bullet.swiper-pagination-bullet-active-next {
+      // background-color: red !important;
+      // fill: red !important;
+      &-next,
+      &-prev {
+      }
+   }
+   .swiper-pagination-bullet {
+      width: 40px;
+      height: 40px;
+      background-color: red;
+      &.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+         background-color: red !important;
+         fill: red !important;
+      }
+   }
+}
