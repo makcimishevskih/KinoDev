@@ -1,8 +1,7 @@
 import css from "./FavoritePage.module.scss";
 
 import { selectFavoriteMovies, useAppSelector } from "@src/app/store";
-
-import FilmsList from "@src/shared/FilmsList";
+import FilmsList from "@src/entities/FilmsList";
 
 const FavoritePage = () => {
    const favoriteFilms = useAppSelector(selectFavoriteMovies);

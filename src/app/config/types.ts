@@ -53,8 +53,7 @@ export type PersonsT = {
    spouses?: SpousesI[];
    countAwards?: number;
    description?: string | null;
-   profession: ProfessionI[];
-   // profession: ProfessionT;
+   profession: ProfessionT | ProfessionT[];
    facts?: FactsI[];
    movies?: MoviesT[] | null;
    updatedAt?: Date | string | null;
@@ -105,11 +104,11 @@ export type EnProfessionT =
    | "writer"
    | "designer"
    | "composer"
-   | "Person"
+   | "actor"
    | "editor"
    | "operator"
    | "producer"
-   | "voice_Person"
+   | "voice_actor"
    | "writer";
 export type ProfessionT =
    | "режиссеры"
@@ -122,15 +121,15 @@ export type ProfessionT =
    | "актеры дубляжа"
    | "сценаристы";
 
-export type PersonsTT = {
-   id?: number | null;
-   photo?: string | null;
-   name?: string | null;
-   enName?: string | null;
-   description?: string | null;
-   profession?: ProfessionT | null;
-   enProfession?: EnProfessionT | null;
-};
+// export type PersonsT = {
+//    id?: number | null;
+//    photo?: string | null;
+//    name?: string | null;
+//    enName?: string | null;
+//    description?: string | null;
+//    profession?: ProfessionT | null;
+//    enProfession?: EnProfessionT | null;
+// };
 
 export type NamesT = {
    name: string;
@@ -210,7 +209,6 @@ type FilmT = {
    releaseYears?: ReleaseYearsT[] | null;
    internalNames?: string[] | null;
    fees?: Record<string, BudgetT>;
-   // fees?: Record<string, BudgetT | {}>;
    status: string | null;
    externalId?: ExternalIdT | null;
    rating: RatingT;
@@ -238,7 +236,7 @@ type FilmT = {
    genres: CountiesT[];
    countries: CountiesT[];
    seasonsInfo?: SeasonsInfoT[] | null;
-   persons?: PersonsTT[] | null;
+   persons?: PersonsT[] | null;
    lists?: string[] | null;
    typeNumber: number;
    alternativeName: string | null;
@@ -308,7 +306,7 @@ export type MockTenFilmDoc = {
    id: string;
 };
 
-export type MockTenFilmsT = {
+export type MockFilmsT = {
    // docs: MockTenFilmDoc[];
    docs: FilmT[];
 } & FilmByNameT1;

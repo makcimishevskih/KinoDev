@@ -1,4 +1,4 @@
-// import { useParams } from "react-router-dom";import { useGetMoviePersonsQuery } from "@src/app/store/api/movieApi"; const { filmId } = useParams(); const { data, isLoading, error } = useGetMoviePersonsQuery({ page,filmId: filmId || "",});
+// import { useParams } from "react-router-dom";import { useGetMoviepersonsQuery } from "@src/app/store/api/movieApi"; const { filmId } = useParams(); const { data, isLoading, error } = useGetMoviepersonsQuery({ page,filmId: filmId || "",});
 
 import css from "./Persons.module.scss";
 
@@ -19,22 +19,22 @@ const Persons = () => {
    }
 
    return (
-      <section className={css.Persons}>
-         <div className={css.Person__wrapper}>
+      <section className={css.persons}>
+         <div className={css.person__wrapper}>
             {docs.map((person) => (
                <article
                   key={person.id}
-                  className={css.Person}
+                  className={css.person}
                >
                   <Link
-                     className={css.Person__link}
+                     className={css.person__link}
                      to={`/person/${person.id}`}
                   >
-                     <div className={css.Person__poster}>
+                     <div className={css.person__poster}>
                         <img
                            className={css.img}
                            src={person.photo || placeholder}
-                           alt="Person"
+                           alt="person"
                         />
                      </div>
 

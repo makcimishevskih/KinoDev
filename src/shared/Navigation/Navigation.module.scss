@@ -1,23 +1,23 @@
+@import "../../app/styles/mixins.scss";
+
 .navigation {
    .list {
       margin: 24px 44px;
-      display: flex;
-      align-items: center;
+      @include flex(center, flex-start, 12px);
       flex-wrap: wrap;
-      gap: 12px;
+
       -ms-overflow-style: none;
       scrollbar-width: none;
 
       .item {
-         font-size: 15px;
-         font-weight: 500;
-         line-height: 18px;
+         @include fontBase(15px, 18px, 500);
          overflow: hidden;
+
          color: #000;
+         white-space: nowrap;
          background-color: #fff;
          cursor: pointer;
          border-radius: 12px;
-         white-space: nowrap;
 
          .link {
             padding: 8px 20px;

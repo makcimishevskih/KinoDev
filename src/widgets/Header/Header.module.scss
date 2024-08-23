@@ -1,17 +1,16 @@
+@import "../../app/styles/mixins.scss";
+
 .header {
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   @include flex(center, space-between);
    height: 80px;
    padding: 5px 20px;
+
    background-color: #141414;
    color: #fff;
 }
 
 .logo {
-   display: flex;
-   gap: 12px;
-   align-items: center;
+   @include flex(center, flex-start, 12px);
 }
 
 .logo h1 {

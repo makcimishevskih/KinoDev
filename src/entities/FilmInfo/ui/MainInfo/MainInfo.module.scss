@@ -1,0 +1,30 @@
+@import "../../../../app/styles/mixins.scss";
+
+.info {
+   max-width: 410px;
+
+   .title {
+      @include flexWrap();
+      @include fontBase(36px, 42px, 700);
+      letter-spacing: -0.5px;
+
+      & > span:last-child {
+         margin-left: 8px;
+      }
+   }
+
+   .subtitle {
+      @include flex(center, flex-start, 8px);
+      @include fontBase(18px, 24px);
+      margin-top: 12px;
+
+      font-style: italic;
+      letter-spacing: -0.2px;
+      color: rgba(0, 0, 0, 0.6);
+   }
+
+   .text {
+      @include fontBase(16px, 22px);
+      margin-top: 12px;
+   }
+}

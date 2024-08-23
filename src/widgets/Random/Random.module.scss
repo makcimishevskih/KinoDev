@@ -1,10 +1,11 @@
+@import "../../app/styles/mixins.scss";
+
 .random {
    .title {
       margin: 20px;
    }
    .btns {
-      display: flex;
-      justify-content: center;
-      // margin: 0 auto;
+      margin-top: 20px;
+      @include flex(start, center);
    }
 }

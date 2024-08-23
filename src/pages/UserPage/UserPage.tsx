@@ -1,11 +1,13 @@
-import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
-import { Navigate } from "react-router-dom";
+import css from "./UserPage.module.scss";
 
-import css from "./User.module.scss";
+import { Navigate } from "react-router-dom";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+
 import placeholder from "../../app/assets/placeholder.jpg";
 
 import Loader from "@src/shared/Loader";
 import Button from "@src/shared/Button";
+
 const UserPage = () => {
    const { isAuthenticated, isLoading, user, logout } = useKindeAuth();
 

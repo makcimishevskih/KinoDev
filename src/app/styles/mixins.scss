@@ -1,0 +1,19 @@
+@mixin flex($align, $justify, $gap: 0, $direction: row) {
+   display: flex;
+   align-items: $align;
+   justify-content: $justify;
+   gap: $gap;
+   flex-direction: $direction;
+}
+
+@mixin flexWrap($gap: 0) {
+   display: flex;
+   flex-wrap: wrap;
+   gap: $gap;
+}
+
+@mixin fontBase($fontSize, $lineHeight, $fontWeight: 400) {
+   font-size: $fontSize;
+   line-height: $lineHeight;
+   font-weight: $fontWeight;
+}

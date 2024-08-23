@@ -1,15 +1,14 @@
+@import "../../app/styles/mixins.scss";
+
 .loaderWrapper {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   @include flex(center, center, 0px);
    margin: 0 auto;
 
    .loader {
       width: 60px;
       height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex(center, flex-start, 0зx);
+
       animation: spin 0.6s infinite linear;
 
       &.xl {

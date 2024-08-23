@@ -1,3 +1,5 @@
+@import "../../app/styles/mixins.scss";
+
 .sort {
    background-color: #f2f2f2;
    border-radius: 8px;
@@ -5,14 +7,13 @@
       display: flex;
 
       .item {
-         font-size: 20px;
-         display: flex;
-         align-items: center;
-         gap: 8px;
-         padding: 12px 20px;
-         cursor: pointer;
-         border-radius: 8px;
+         @include flex(center, flex-start, 8px);
+         @include fontBase(20px, 24px);
          position: relative;
+
+         padding: 12px 20px;
+         border-radius: 8px;
+         cursor: pointer;
          &:not(:last-child)::after {
             position: absolute;
 
@@ -27,9 +28,7 @@
          }
 
          .title {
-            font-size: 15px;
-            font-weight: 500;
-            line-height: 18px;
+            @include fontBase(15px, 18px, 500);
             white-space: nowrap;
             color: #000;
          }

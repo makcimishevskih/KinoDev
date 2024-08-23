@@ -1,3 +1,5 @@
+@import "../../app/styles/mixins.scss";
+
 .layout {
    position: fixed;
    inset: 0;
@@ -10,9 +12,7 @@
       top: 50%;
       transform: translate(-50%, -50%);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex(center, center);
 
       min-width: 400px;
       min-height: 210px;
@@ -26,16 +26,13 @@
       box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.1);
 
       .title {
-         font-size: 30px;
-         line-height: 34px;
+         @include fontBase(30px, 34px);
       }
    }
    .btns {
+      @include flex(center, center, 20px);
       margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
       text-align: center;
-      gap: 20px;
    }
 }

@@ -1,23 +1,23 @@
 import css from "./Random.module.scss";
 
 import { mockRandomFilm } from "@src/app/config/mockRandom";
-import { changeType } from "@src/app/store/slices/moviesSlice";
-import { movieCategoriesEnT } from "@src/app/config/types";
+// import { changeType } from "@src/app/store/slices/moviesSlice";
+// import { movieCategoriesEnT } from "@src/app/config/types";
 import {
    selectFavoriteMovies,
-   selectType,
-   useAppDispatch,
+   // selectType,
+   // useAppDispatch,
    useAppSelector,
 } from "@src/app/store";
 
-import Film from "@src/shared/Film";
+import Film from "@src/entities/Film";
 // import MoviesTypeList from "../../features/MoviesTypeList";
 import Button from "@src/shared/Button";
 
 // import { useGetRandomQuery } from "@src/app/store/api/movieApi";
 // const dispatch = useAppDispatch();
 // const { data: film, isLoading, refetch } = useGetRandomQuery(type);
-import Loader from "@src/shared/Loader";
+// import Loader from "@src/shared/Loader";
 const Random = () => {
    // const type = useAppSelector(selectType);
    const films = useAppSelector(selectFavoriteMovies);
@@ -44,7 +44,7 @@ const Random = () => {
                color="black"
                // onClick={() => refetch()}
             >
-               Click
+               Change film
             </Button>
          </div>
       </section>

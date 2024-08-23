@@ -104,7 +104,7 @@ export const personsMock: personsMockI = {
    pages: 10,
 };
 
-export const PersonById: PersonsT = {
+export const mockPersonById: PersonsT = {
    id: 7836,
    name: "Киану Ривз",
    enName: "Keanu Reeves",

@@ -1,23 +1,21 @@
+@import "../../app/styles/mixins.scss";
+
 .footer {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+   @include flex(center, center);
+
    min-height: 100px;
 
    padding: 12px 20px;
    background-color: #141414;
 
    &__links {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      @include flex(center, center, 16px);
       flex-wrap: wrap;
-      gap: 16px;
    }
 
    &__link {
-      font-size: 15px;
-      line-height: 18px;
+      @include fontBase(15px, 18px);
+
       white-space: nowrap;
       text-decoration: none;
       opacity: 0.5;

@@ -1,0 +1,65 @@
+@import "../../app/styles/mixins.scss";
+
+.rating {
+   width: 200px;
+
+   .rate {
+      @include flex(center, flex-start, 12px);
+
+      & > span {
+         @include fontBase(28px, 34px, 900);
+      }
+
+      &.gold {
+         background: linear-gradient(165deg, #ffd25e 16.44%, #b59646 63.42%);
+         -webkit-background-clip: text;
+         background-clip: text;
+         color: transparent;
+      }
+
+      &.green {
+         color: #3bb33b;
+      }
+
+      &.gray {
+         color: #777777;
+         &.noRating {
+            white-space: nowrap;
+         }
+      }
+
+      &.red {
+         color: #ff0000;
+      }
+
+      .rating__top250 {
+         @include flex(center, center, 0, column);
+         margin-left: 12px;
+
+         span:first-child {
+            @include fontBase(16px, 20px, 600);
+            background: linear-gradient(165deg, #ffd25e 16.44%, #b59646 63.42%);
+
+            color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+         }
+         span:last-child {
+            @include fontBase(14px, 16px);
+            background: linear-gradient(165deg, #ffd25e 16.44%, #b59646 63.42%);
+
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+         }
+      }
+   }
+   .votes,
+   .criticsRate {
+      @include fontBase(13px, 18px);
+      margin-top: 4px;
+      color: rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+   }
+}

@@ -1,28 +1,30 @@
 // import { useGetSearchQuery } from "@src/app/store/api/movieApi";
 // import { useParams } from "react-router-dom";
-// const { query } = useParams();
-// const { data } = useGetSearchQuery({ page, query });
 
 import css from "./SearchFilmPage.module.scss";
 
-// import { useCallback, useState } from "react";
-import { mockQueryFilms } from "@src/app/config/mockfilms";
 import { usePage } from "@src/hooks/usePage";
+import { mockQueryFilms } from "@src/app/config/mockfilms";
+import { useUpdateSearchParams } from "@src/hooks/useUpdateSearchParams";
 
-import Pagination from "@src/shared/Pagination";
 import NotFound from "@src/shared/NotFound";
-import FilmsList from "@src/shared/FilmsList";
+import Pagination from "@src/shared/Pagination";
+import FilmsList from "@src/entities/FilmsList";
 
 const SearchFilmPage = () => {
    const { page, handlePage } = usePage();
+   // const { query } = useParams();
+   useUpdateSearchParams(page);
+   // const { data: { docs } } = useGetSearchQuery({ page, query });
 
-   const data = mockQueryFilms;
+   const data = mockQueryFilms.docs;
 
-   if (data && data.docs.length === 0) {
+   if (data && data.length === 0) {
       return null;
    }
 
-   const filterFilmsData = data.docs.slice(
+   // DELETE AFTER USEQUERYHOOK
+   const filterFilmsData = data.slice(
       page === 1 ? 0 : page - 1 * 10,
       page * 10,
    );
@@ -34,7 +36,7 @@ const SearchFilmPage = () => {
             <div className={css.wrapper}>
                <FilmsList films={filterFilmsData} />
                <Pagination
-                  data={data.docs}
+                  data={data}
                   handlePage={handlePage}
                   pageDisplayed={3}
                />

@@ -1,9 +1,7 @@
-.pagination {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   gap: 12px;
+@import "../../app/styles/mixins.scss";
 
+.pagination {
+   @include flex(center, center, 12px);
    margin-top: 12px;
    max-height: 120px;
    height: 80px;
@@ -11,9 +9,7 @@
    list-style: none;
 
    .pagination__item {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center, center);
 
       height: 40px;
       width: 40px;
@@ -24,11 +20,10 @@
       background-color: #e5e5e5;
 
       .pagination__link {
-         display: flex;
-         align-items: center;
-         justify-content: center;
+         @include flex(center, center);
          height: 100%;
          width: 100%;
+
          color: #362727;
 
          &.active {

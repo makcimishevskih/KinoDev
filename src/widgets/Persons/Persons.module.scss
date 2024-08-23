@@ -1,14 +1,13 @@
-// IMAGE
-.Persons {
+@import "../../app/styles/mixins.scss";
+
+.persons {
    margin: 20px 0;
 
-   .Person__wrapper {
-      display: flex;
+   .person__wrapper {
+      @include flex(start, center, 32px);
       flex-wrap: wrap;
-      justify-content: center;
-      gap: 32px;
 
-      .Person {
+      .person {
          position: relative;
          max-width: 200px;
          padding: 24px;
@@ -39,8 +38,8 @@
             bottom: 0;
          }
 
-         .Person__link {
-            .Person__poster {
+         .person__link {
+            .person__poster {
                width: 160px;
                max-height: 230px;
                overflow: hidden;
@@ -60,11 +59,9 @@
       margin-top: 12px;
 
       .title {
-         display: flex;
-         flex-wrap: wrap;
-         font-size: 20px;
-         font-weight: 500;
-         line-height: 24px;
+         @include flexWrap();
+         @include fontBase(20px, 24px, 500);
+
          display: -webkit-box;
          -webkit-box-orient: vertical;
          -webkit-line-clamp: 2;
@@ -72,25 +69,20 @@
       }
 
       .subtitle {
+         @include flexWrap(8px);
+         @include fontBase(16px, 20px);
          margin-top: 4px;
-         display: flex;
-         flex-wrap: wrap;
-         gap: 8px;
 
-         font-size: 16px;
-         line-height: 20px;
          overflow: hidden;
          white-space: nowrap;
          text-overflow: ellipsis;
       }
 
       .additionalInfo {
-         display: flex;
-         flex-direction: column;
-         gap: 4px;
+         @include flex(start, flex-start, 4px, column);
+         @include fontBase(14px, 16px);
          margin-top: 12px;
-         font-size: 14px;
-         line-height: 16px;
+
          color: rgba(0, 0, 0, 0.6);
       }
    }

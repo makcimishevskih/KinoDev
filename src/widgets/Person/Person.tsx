@@ -4,7 +4,7 @@ import placeholder from "../../app/assets/placeholder.jpg";
 import { PersonsT } from "@src/app/config/types";
 import { capitalize, formatDate, getPersonYears } from "@src/utils/helpers";
 
-import AboutInfoContainer from "../../pages/FilmPage/ui/MainFilmInfo/ui/DetailedInfo/ui/AboutInfoContainer";
+import AboutInfoContainer from "../../entities/FilmInfo/ui/DetailedInfo/ui/DetailContainer";
 import { Link } from "react-router-dom";
 
 interface PersonsProps {

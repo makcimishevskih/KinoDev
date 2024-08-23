@@ -1,12 +1,9 @@
-.button {
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
-   gap: 12px;
+@import "../../app/styles/mixins.scss";
 
-   font-size: 20px;
-   line-height: 14px;
-   font-weight: 500;
+.button {
+   @include flex(center, space-between, 12px);
+   @include fontBase(20px, 20px, 500);
+
    white-space: nowrap;
    text-transform: capitalize;
    cursor: pointer;

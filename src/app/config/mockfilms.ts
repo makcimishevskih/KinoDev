@@ -1,11 +1,11 @@
-import FilmT, { FilmByNameT1, FilmByNameT2, MockTenFilmsT } from "./types";
+import FilmT, { MockFilmsT } from "./types";
 
 // type=movie
 // getRandom
 // https://api.kinopoisk.dev/v1.4/movie/random?type=movie
 // getByName page limit
 // https://api.kinopoisk.dev/v1.4/movie/search?page=1&limit=10&query=name
-const mockFilmByNameMatrix: FilmByNameT2 & FilmByNameT1 = {
+const mockFilmByNameMatrix: MockFilmsT = {
    total: 326,
    limit: 10,
    page: 1,
@@ -1028,7 +1028,7 @@ const mockFilmByNameMatrix: FilmByNameT2 & FilmByNameT1 = {
    ],
 };
 
-const mockTenFilms: MockTenFilmsT = {
+const mockTenFilms: MockFilmsT = {
    docs: [
       {
          id: 6059559,
@@ -3369,7 +3369,7 @@ const mockFilmById: FilmT = {
    },
 };
 
-const mockQueryFilms: MockTenFilmsT = {
+const mockQueryFilms: MockFilmsT = {
    docs: [
       {
          id: 400787,

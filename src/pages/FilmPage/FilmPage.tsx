@@ -1,13 +1,13 @@
-import css from "./FilmInfo.module.scss";
+import css from "./FilmPage.module.scss";
 
-import MainFilmInfo from "./ui/MainFilmInfo";
-import MediaInfo from "./ui/MediaInfo";
+import FilmInfo from "../../entities/FilmInfo";
+import MediaInfo from "@src/entities/MediaInfo";
 
 const FilmPage = () => {
    return (
       <div className={css.wrapper}>
          <MediaInfo />
-         <MainFilmInfo />
+         <FilmInfo />
       </div>
    );
 };

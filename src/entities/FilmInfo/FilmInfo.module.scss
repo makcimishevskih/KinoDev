@@ -1,0 +1,34 @@
+@import "../../app/styles/mixins.scss";
+
+.mainInfo {
+   padding: 0 8px;
+   width: 100%;
+
+   .wrapper {
+      @include flex(start, flex-start, 12px);
+      flex-wrap: wrap;
+
+      min-height: 205px;
+      padding: 8px;
+
+      .mainInfo__wrapper {
+      }
+
+      .detailsInfo__wrapper {
+         width: 410px;
+      }
+
+      .personsInfo__wrapper {
+         @include flex(center, flex-start, 0, column);
+
+         width: 200px;
+         height: 100%;
+         margin-top: 12px;
+      }
+
+      .sequelsPrequels {
+         max-width: 100%;
+         margin-top: 24px;
+      }
+   }
+}

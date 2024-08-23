@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { personsMockI } from "@src/app/config/mockActor";
 import FilmT, {
    PersonsT,
-   MockTenFilmsT,
+   MockFilmsT,
    movieCategoriesEnT,
 } from "@src/app/config/types";
 
@@ -26,7 +26,7 @@ const movieApi = createApi({
    }),
    endpoints: (builder) => ({
       getMovies: builder.query<
-         MockTenFilmsT,
+         MockFilmsT,
          { page: number; type: movieCategoriesEnT }
       >({
          query: ({ page = 1, type = "anime" }) => ({
@@ -40,17 +40,13 @@ const movieApi = createApi({
             };
          },
       }),
-      getSearch: builder.query<
-         MockTenFilmsT,
-         { page?: number; query?: string }
-      >({
+      getSearch: builder.query<MockFilmsT, { page?: number; query?: string }>({
          query({ page = 1, query = "" }) {
             return {
                url: `/movie/search?page=${page}&limit=10&query=${query}`,
             };
          },
       }),
-      // getMoviePersonById: builder.query<FilmT, string>({
       getMoviePersonById: builder.query<PersonsT, string>({
          query(id) {
             return {

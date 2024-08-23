@@ -1,0 +1,29 @@
+@import "../../../../../../app/styles/mixins.scss";
+
+.wrapper {
+   min-height: 30px;
+
+   @include flex(start, flex-start, 12px);
+
+   &.block {
+      width: 100%;
+      flex-direction: column;
+   }
+
+   .subtitle {
+      @include fontBase(13px, 18px, 12px);
+      width: 160px;
+      min-width: 160px;
+
+      color: rgba(0, 0, 0, 0.6);
+   }
+
+   .value {
+      @include fontBase(13px, 18px);
+   }
+   .value_flex {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+   }
+}

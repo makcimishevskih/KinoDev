@@ -1,13 +1,12 @@
-.Person {
-   margin-top: 30px;
-   padding: 0 8px;
-   width: 100%;
+@import "../../app/styles/mixins.scss";
 
-   display: flex;
+.Person {
+   @include flex(flex-start, flex-start, 12px);
    flex-wrap: wrap;
-   gap: 12px;
 
    min-height: 205px;
+   width: 100%;
+   margin-top: 30px;
    padding: 8px;
 
    .media {
@@ -28,61 +27,50 @@
 
    .info {
       .title {
-         font-size: 36px;
-         font-weight: 700;
-         line-height: 42px;
+         @include flexWrap();
+         @include fontBase(36px, 42px, 700);
          letter-spacing: -0.5px;
-         display: flex;
-         flex-wrap: wrap;
       }
 
       & > .subtitle {
+         @include flex(center, flex-start, 8px);
+         @include fontBase(18px, 22px);
          margin-top: 12px;
-         display: flex;
-         align-items: center;
-         gap: 8px;
-         font-size: 18px;
-         font-weight: 400;
+
          color: rgba(0, 0, 0, 0.6);
          letter-spacing: -0.2px;
          font-style: italic;
       }
       .wrapper {
+         @include flexWrap();
          min-height: 205px;
-         display: flex;
-         flex-wrap: wrap;
          margin-top: 32px;
 
          .details {
             .subtitle {
-               font-size: 22px;
-               line-height: 28px;
-               color: #000;
-               font-weight: 600;
-               font-style: normal;
+               @include fontBase(22px, 28px, 600);
                margin-bottom: 10px;
+
+               color: #000;
+               font-style: normal;
             }
          }
 
          .film {
-            padding: 12px 0 4px;
-            margin-top: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+            @include flex(flex-start, flex-start, 4px, column);
             width: 200px;
+            margin-top: 12px;
+            padding: 12px 0 4px;
 
             .title {
+               @include fontBase(15px, 18px);
+
                margin-bottom: 4px;
-               font-size: 15px;
-               line-height: 20px;
             }
             .list {
-               display: flex;
-               flex-direction: column;
-               gap: 2px;
+               @include flex(flex-start, flex-start, 4px, column);
                .link {
-                  font-size: 13px;
+                  @include fontBase(13px, 16px);
                }
             }
          }

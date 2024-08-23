@@ -1,0 +1,6 @@
+@import "../../app/styles/mixins.scss";
+
+.films {
+   @include flex(start, flex-start, 12px, column);
+   width: 100%;
+}
