@@ -3,7 +3,7 @@
 .film__wrapper {
    .film {
       position: relative;
-      @include flex(start, flex-start, 32px);
+      @include flex(flex-start, flex-start, 32px);
 
       min-height: 250px;
       padding: 24px;
