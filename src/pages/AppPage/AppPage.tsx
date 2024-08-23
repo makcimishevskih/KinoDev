@@ -5,6 +5,9 @@ import { usePage } from "@src/hooks/usePage";
 
 import { useUpdateSearchParams } from "@src/hooks/useUpdateSearchParams";
 import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination";
+import { useEffect } from "react";
+import { changeType } from "@src/app/store/slices/moviesSlice";
+import { useAppDispatch } from "@src/app/store";
 
 const AppPage = () => {
    const { page, handlePage } = usePage();
@@ -12,9 +15,16 @@ const AppPage = () => {
 
    // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
 
-   const data = mockTenFilms;
+   // DELETE AFTER USEQUERY
+   const dispatch = useAppDispatch();
+   useEffect(() => {
+      dispatch(changeType("anime"));
+   }, []);
+   //
 
-   if (!data || data.docs.length === 0) {
+   const data = mockTenFilms.docs;
+
+   if (!data || data.length === 0) {
       return null;
    }
 
@@ -25,7 +35,7 @@ const AppPage = () => {
             page={page}
             type={type}
             order={order}
-            data={data.docs}
+            data={data}
             sortField={sortField}
             handlePage={handlePage}
          />

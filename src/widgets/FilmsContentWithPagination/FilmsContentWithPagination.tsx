@@ -23,17 +23,13 @@ const FilmsContentWithPagination = ({
    handlePage,
 }: {
    data: FilmT[];
-   type: movieCategoriesEnT;
+   page: number;
    order: OrderT;
    sortField: SortFieldT;
-   page: number;
+   type: movieCategoriesEnT;
    handlePage: (num: number) => void;
 }) => {
    const dispatch = useAppDispatch();
-
-   if (!data || data.length === 0) {
-      return null;
-   }
 
    const changeMovieType = (type: movieCategoriesEnT) => {
       dispatch(changeType(type));
@@ -44,6 +40,10 @@ const FilmsContentWithPagination = ({
       .filter((el) => el.type === type)
       // DELETE AFTER UNCOMMENT USEQUERY
       .slice(page === 1 ? 0 : page - 1 * 10, page * 10);
+
+   const aa = filterFilmsData.map((el) => el.name);
+
+   console.log(aa);
 
    return (
       <>
@@ -58,7 +58,7 @@ const FilmsContentWithPagination = ({
          <div className={css.content}>
             {filterFilmsData.length !== 0 ? (
                <>
-                  <FilmsList films={data} />
+                  <FilmsList films={filterFilmsData} />
                   <Pagination
                      data={data}
                      handlePage={handlePage}

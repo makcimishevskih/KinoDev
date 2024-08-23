@@ -4,9 +4,12 @@ import { mockTop250 } from "@src/app/config/mockTop250";
 import { usePage } from "@src/hooks/usePage";
 import { useUpdateSearchParams } from "@src/hooks/useUpdateSearchParams";
 import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination";
+import { useEffect } from "react";
+import { useAppDispatch } from "@src/app/store";
+import { changeType } from "@src/app/store/slices/moviesSlice";
 
 const Top250Page = () => {
-   const data = mockTop250;
+   const data = mockTop250.docs;
 
    const { page, handlePage } = usePage();
    const { type, order, sortField } = useUpdateSearchParams(page);
@@ -14,7 +17,14 @@ const Top250Page = () => {
    // import { useGetTop250Query } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/Loader";
    // const { data, isLoading, error } = useGetTop250Query({ page }); if (isLoading) {return <Loader />;}
 
-   if (!data || data.docs.length === 0) {
+   // DELETE AFTER USEQUERY
+   const dispatch = useAppDispatch();
+   useEffect(() => {
+      dispatch(changeType("movie"));
+   }, []);
+   //
+
+   if (!data || data.length === 0) {
       return null;
    }
 
@@ -22,7 +32,7 @@ const Top250Page = () => {
       <section className={css.top250}>
          <h2 className={css.title}>Top 250</h2>
          <FilmsContentWithPagination
-            data={data.docs}
+            data={data}
             type={type}
             order={order}
             sortField={sortField}
