@@ -13,10 +13,10 @@ export interface StateI {
 }
 
 const initialState: StateI = {
-   type: "movie",
-   favoriteFilms: [],
+   type: "anime",
    order: "asc",
    sortField: "",
+   favoriteFilms: [],
 } as StateI;
 1;
 
