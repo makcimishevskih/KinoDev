@@ -29,6 +29,8 @@ export default defineConfig({
    ],
    server: {
       port: 3000,
+      host: true,
+      strictPort: true,
    },
    // @ts-ignore-next-line
    base: import.meta.BASE_PATH,

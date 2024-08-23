@@ -8,12 +8,12 @@
    background-color: rgba(248, 82, 41, 0.2);
 
    .modal {
+      @include flex(center, center, 4px);
+
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-
-      @include flex(center, center, 4px);
 
       min-width: 400px;
       min-height: 210px;
