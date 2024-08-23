@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import "../../app/styles/mixins";
+@import "../../app/styles/vars";
 
 .Person {
    @include flex(flex-start, flex-start, 12px);

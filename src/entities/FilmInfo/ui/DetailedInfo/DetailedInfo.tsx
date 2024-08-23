@@ -1,7 +1,7 @@
 import css from "./DetailedInfo.module.scss";
 
 import cn from "classnames";
-import FilmT, { CountiesT } from "@src/app/config/types";
+import FilmT from "@src/app/config/types";
 import { professions } from "./config";
 import { formatBudgetToUSD, formatShort } from "@src/shared/lib/helpers";
 
