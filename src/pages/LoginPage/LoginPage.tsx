@@ -3,8 +3,8 @@ import css from "./LoginPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
-import Button from "../../shared/Button";
-import Modal from "@src/shared/Modal";
+import Button from "../../shared/ui/Button";
+import Modal from "@src/shared/ui/Modal";
 
 export const Login = () => {
    const navigate = useNavigate();

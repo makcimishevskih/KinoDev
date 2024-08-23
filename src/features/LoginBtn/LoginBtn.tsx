@@ -4,7 +4,7 @@ import placeholder from "../../app/assets/placeholder.jpg";
 import { useNavigate } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
-import Button from "@src/shared/Button";
+import Button from "@src/shared/ui/Button";
 
 const LoginBtn = () => {
    const navigate = useNavigate();

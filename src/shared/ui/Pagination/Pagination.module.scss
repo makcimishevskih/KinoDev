@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import "../../../app/styles/mixins";
+@import "../../../app/styles/vars";
 
 .pagination {
    @include flex(center, center, 12px);
@@ -27,7 +28,7 @@
          color: #362727;
 
          &.active {
-            color: #fff;
+            color: $BGCWhite;
             background-color: rgb(85, 66, 66);
             border-radius: 12px;
          }
@@ -36,11 +37,11 @@
 }
 
 .button_prev {
-   background-image: url("../../app/assets/prev.svg");
+   background-image: url("/src/app/assets/prev.svg");
 }
 
 .button_next {
-   background-image: url("../../app/assets/next.svg");
+   background-image: url("/src/app/assets/next.svg");
 }
 
 .previous.disabled a .button_prev {

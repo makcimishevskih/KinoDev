@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import "../../app/styles/mixins";
+@import "../../app/styles/vars";
 
 .film__wrapper {
    .film {
@@ -26,7 +27,7 @@
          left: 50%;
          transform: translateX(-50%);
 
-         background-color: #f4f4f4;
+         background-color: $BGCGray;
       }
 
       &::before {

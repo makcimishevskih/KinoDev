@@ -2,22 +2,22 @@ import css from "./MainInfo.module.scss";
 
 import FilmT from "@src/app/config/types";
 
-interface MainFilmInfoProps {
+interface MainInfoProps {
    film: FilmT;
 }
 
-const MainFilmInfo = ({ film }: MainFilmInfoProps) => {
+const MainInfo = ({ film }: MainInfoProps) => {
    return (
       <div className={css.info}>
          <h1 className={css.title}>
             <span>{film.name}</span>
             <span>
                {film.isSeries &&
-               film?.releaseYears &&
-               film?.releaseYears?.length > 0 &&
-               film?.releaseYears[0]?.start &&
-               film?.releaseYears[0]?.end
-                  ? `сериал (${film?.releaseYears}-${film?.releaseYears[0].end})`
+               film.releaseYears &&
+               film.releaseYears.length > 0 &&
+               film.releaseYears[0].start &&
+               film.releaseYears[0].end
+                  ? `сериал (${film?.releaseYears}-${film.releaseYears[0].end})`
                   : `(${film.year})`}
             </span>
          </h1>
@@ -39,4 +39,4 @@ const MainFilmInfo = ({ film }: MainFilmInfoProps) => {
       </div>
    );
 };
-export default MainFilmInfo;
+export default MainInfo;

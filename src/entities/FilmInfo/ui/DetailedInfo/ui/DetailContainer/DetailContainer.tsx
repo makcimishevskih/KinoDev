@@ -1,7 +1,7 @@
 import css from "./DetailContainer.module.scss";
 
 import cn from "classnames";
-import { capitalize } from "@src/utils/helpers";
+import { capitalize } from "@src/shared/lib/helpers";
 import { PersonsT, ProfessionT } from "@src/app/config/types";
 
 import ProfessionsList from "../ProfessionsList";

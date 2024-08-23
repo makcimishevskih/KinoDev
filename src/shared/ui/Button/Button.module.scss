@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import "../../../app/styles/vars";
+@import "../../../app/styles/mixins";
 
 .button {
    @include flex(center, space-between, 12px);
@@ -9,12 +10,12 @@
    cursor: pointer;
 
    &.button_black {
-      color: #fff;
-      background-color: #000;
+      color: $BGCWhite;
+      background-color: $colorBlack;
    }
    &.button_white {
-      color: #000;
-      background-color: #fff;
+      color: $colorBlack;
+      background-color: $BGCWhite;
    }
 
    &.button_default {
@@ -73,7 +74,7 @@
 
    &.button_user {
       overflow: hidden;
-      background-color: #fff;
+      background-color: $BGCWhite;
       background: linear-gradient(150deg, #eb9a86 16.44%, #f1ee15 63.42%);
       border-radius: 50%;
       cursor: pointer;

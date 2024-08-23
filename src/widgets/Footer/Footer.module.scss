@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import "../../app/styles/vars";
+@import "../../app/styles/mixins";
 
 .footer {
    @include flex(center, center);
@@ -19,7 +20,7 @@
       white-space: nowrap;
       text-decoration: none;
       opacity: 0.5;
-      color: #fff;
+      color: $BGCWhite;
 
       &:hover {
          transform: scale(1.1);

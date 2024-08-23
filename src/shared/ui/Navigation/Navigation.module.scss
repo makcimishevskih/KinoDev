@@ -1,4 +1,5 @@
-@import "../../app/styles/mixins.scss";
+@import " ../../../../../app/styles/mixins";
+@import " ../../../../../app/styles/vars";
 
 .navigation {
    .list {
@@ -13,9 +14,9 @@
          @include fontBase(15px, 18px, 500);
          overflow: hidden;
 
-         color: #000;
+         color: $colorBlack;
          white-space: nowrap;
-         background-color: #fff;
+         // background-color: $BGCWhite;
          cursor: pointer;
          border-radius: 12px;
 
@@ -27,7 +28,7 @@
             overflow: hidden;
 
             &.active {
-               color: #fff;
+               // color: $BGCWhite;
                background: linear-gradient(
                   150deg,
                   #e45808 16.44%,

@@ -3,7 +3,7 @@ import { ProfessionT } from "@src/app/config/types";
 import { mockFilmById } from "@src/app/config/mockfilms";
 
 import { Link } from "react-router-dom";
-import NotFound from "@src/shared/NotFound";
+import NotFound from "@src/shared/ui/NotFound";
 
 interface ProfessionsListProps {
    profession?: ProfessionT | null;
@@ -38,7 +38,7 @@ const ProfessionsList = ({
          {filteredPersons.map((person, i) => (
             <Link
                key={person.id}
-               to="#"
+               to={`/person/${person.id}`}
             >
                {person.name}
                {separator && i !== filteredPersons?.length - 1 && (

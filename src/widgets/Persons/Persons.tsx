@@ -2,12 +2,12 @@
 
 import css from "./Persons.module.scss";
 
+import { usePage } from "@src/shared/hooks/usePage";
 import { personsMock } from "@src/app/config/mockActor";
 import placeholder from "../../app/assets/placeholder.jpg";
-import { usePage } from "@src/hooks/usePage";
 
 import { Link } from "react-router-dom";
-import Pagination from "@src/shared/Pagination";
+import Pagination from "@src/shared/ui/Pagination";
 
 const Persons = () => {
    const { handlePage } = usePage();

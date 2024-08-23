@@ -13,8 +13,8 @@ import {
 } from "@src/app/store/slices/moviesSlice";
 import { useAppDispatch } from "@src/app/store";
 
-import NotFound from "../../shared/NotFound";
-import Button from "../../shared/Button";
+import NotFound from "../../shared/ui/NotFound";
+import Button from "../../shared/ui/Button";
 import Rating from "../Rating";
 
 interface FilmProps {

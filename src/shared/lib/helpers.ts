@@ -73,3 +73,19 @@ export const getPersonYears = (years: number): number =>
 export const sortFilmsByOrder = <T>(a: T, b: T, order: OrderT): T[] => {
    return order === "asc" ? [a, b] : [b, a];
 };
+
+export const xssValidation = (str: string) => {
+   const chars = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&uot;",
+      "\\": "&#39;",
+      "str/": "&#x2F;",
+   };
+
+   return str.replace(/[&<>"'\/]/g, (char: string): string => {
+      // @ts-ignore-next-line
+      return chars[`${char}`] ? chars[`${char}`] : char;
+   });
+};

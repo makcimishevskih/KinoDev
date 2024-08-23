@@ -1,5 +1,5 @@
 import FilmT, { OrderT, SortFieldT } from "@src/app/config/types";
-import { sortFilmsByOrder } from "@src/utils/helpers";
+import { sortFilmsByOrder } from "@src/shared/lib/helpers";
 
 export const handleSorting = (
    filmA: FilmT,

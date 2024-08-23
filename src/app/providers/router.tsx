@@ -3,7 +3,7 @@ import paths from "./config";
 import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-import Loader from "@src/shared/Loader";
+import Loader from "@src/shared/ui/Loader";
 import AppPage from "@src/pages/AppPage";
 import ErrorPage from "@src/pages/ErrorPage";
 import LayoutPage from "@src/pages/LayotPage";

@@ -5,8 +5,8 @@ import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
 import placeholder from "../../app/assets/placeholder.jpg";
 
-import Loader from "@src/shared/Loader";
-import Button from "@src/shared/Button";
+import Loader from "@src/shared/ui/Loader";
+import Button from "@src/shared/ui/Button";
 
 const UserPage = () => {
    const { isAuthenticated, isLoading, user, logout } = useKindeAuth();

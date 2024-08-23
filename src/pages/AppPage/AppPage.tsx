@@ -1,9 +1,9 @@
 import css from "./AppPage.module.scss";
 
 import { mockTenFilms } from "@src/app/config/mockfilms";
-import { usePage } from "@src/hooks/usePage";
+import { usePage } from "@src/shared/hooks/usePage";
 
-import { useUpdateSearchParams } from "@src/hooks/useUpdateSearchParams";
+import { useUpdateSearchParams } from "@src/shared/hooks/useUpdateSearchParams";
 import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination";
 import { useEffect } from "react";
 import { changeType } from "@src/app/store/slices/moviesSlice";
@@ -13,7 +13,7 @@ const AppPage = () => {
    const { page, handlePage } = usePage();
    const { type, order, sortField } = useUpdateSearchParams(page);
 
-   // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
+   // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/ui/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
 
    // DELETE AFTER USEQUERY
    const dispatch = useAppDispatch();

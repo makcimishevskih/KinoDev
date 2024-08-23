@@ -9,8 +9,8 @@ import { handleSorting } from "./config";
 import { useAppDispatch } from "@src/app/store";
 import { changeType } from "@src/app/store/slices/moviesSlice";
 
-import Pagination from "@src/shared/Pagination";
-import NotFound from "@src/shared/NotFound";
+import Pagination from "@src/shared/ui/Pagination";
+import NotFound from "@src/shared/ui/NotFound";
 import FilterSort from "@src/entities/FilterSort";
 import FilmsList from "@src/entities/FilmsList";
 
@@ -40,10 +40,6 @@ const FilmsContentWithPagination = ({
       .filter((el) => el.type === type)
       // DELETE AFTER UNCOMMENT USEQUERY
       .slice(page === 1 ? 0 : page - 1 * 10, page * 10);
-
-   const aa = filterFilmsData.map((el) => el.name);
-
-   console.log(aa);
 
    return (
       <>

@@ -1,11 +1,11 @@
 import css from "./Header.module.scss";
 
-import { icons } from "@src/shared/icons/icons";
+import { icons } from "@src/shared/ui/icons/icons";
 
 import { Link } from "react-router-dom";
 import Search from "@src/features/Search";
 import LoginBtn from "@src/features/LoginBtn";
-import Navigation from "@src/shared/Navigation";
+import Navigation from "@src/shared/ui/Navigation";
 
 const Header = () => {
    return (

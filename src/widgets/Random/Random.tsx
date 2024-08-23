@@ -12,12 +12,12 @@ import {
 
 import Film from "@src/entities/Film";
 // import MoviesTypeList from "../../features/MoviesTypeList";
-import Button from "@src/shared/Button";
+import Button from "@src/shared/ui/Button";
 
 // import { useGetRandomQuery } from "@src/app/store/api/movieApi";
 // const dispatch = useAppDispatch();
 // const { data: film, isLoading, refetch } = useGetRandomQuery(type);
-// import Loader from "@src/shared/Loader";
+// import Loader from "@src/shared/ui/Loader";
 const Random = () => {
    // const type = useAppSelector(selectType);
    const films = useAppSelector(selectFavoriteMovies);

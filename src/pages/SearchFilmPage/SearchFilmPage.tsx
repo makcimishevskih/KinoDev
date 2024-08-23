@@ -3,12 +3,12 @@
 
 import css from "./SearchFilmPage.module.scss";
 
-import { usePage } from "@src/hooks/usePage";
+import { usePage } from "@src/shared/hooks/usePage";
 import { mockQueryFilms } from "@src/app/config/mockfilms";
-import { useUpdateSearchParams } from "@src/hooks/useUpdateSearchParams";
+import { useUpdateSearchParams } from "@src/shared/hooks/useUpdateSearchParams";
 
-import NotFound from "@src/shared/NotFound";
-import Pagination from "@src/shared/Pagination";
+import NotFound from "@src/shared/ui/NotFound";
+import Pagination from "@src/shared/ui/Pagination";
 import FilmsList from "@src/entities/FilmsList";
 
 const SearchFilmPage = () => {

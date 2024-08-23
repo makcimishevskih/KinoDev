@@ -2,7 +2,11 @@ import css from "./Person.module.scss";
 
 import placeholder from "../../app/assets/placeholder.jpg";
 import { PersonsT } from "@src/app/config/types";
-import { capitalize, formatDate, getPersonYears } from "@src/utils/helpers";
+import {
+   capitalize,
+   formatDate,
+   getPersonYears,
+} from "@src/shared/lib/helpers";
 
 import AboutInfoContainer from "../../entities/FilmInfo/ui/DetailedInfo/ui/DetailContainer";
 import { Link } from "react-router-dom";

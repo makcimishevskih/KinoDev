@@ -12,6 +12,10 @@
       "predeploy": "npm run build",
       "deploy": "gh-pages -d dist"
    },
+   "browserslist": [
+      "defaults and supports es6-module",
+      "maintained node versions"
+   ],
    "dependencies": {
       "@kinde-oss/kinde-auth-react": "^4.0.2",
       "@reduxjs/toolkit": "^2.2.7",
@@ -35,6 +39,7 @@
       "@typescript-eslint/eslint-plugin": "^7.15.0",
       "@typescript-eslint/parser": "^7.18.0",
       "@vitejs/plugin-react": "^4.3.1",
+      "autoprefixer": "^10.4.20",
       "eslint": "^8.57.0",
       "eslint-config-prettier": "^9.1.0",
       "eslint-import-resolver-alias": "^1.1.2",
@@ -46,7 +51,11 @@
       "eslint-plugin-react-refresh": "^0.4.7",
       "github-pages": "^3.0.2",
       "prettier": "^3.3.3",
+      "rollup-plugin-visualizer": "^5.12.0",
+      "sharp": "^0.33.5",
+      "svgo": "^3.3.2",
       "typescript": "^5.2.2",
-      "vite": "^5.3.4"
+      "vite": "^5.3.4",
+      "vite-plugin-image-optimizer": "^1.1.8"
    }
 }

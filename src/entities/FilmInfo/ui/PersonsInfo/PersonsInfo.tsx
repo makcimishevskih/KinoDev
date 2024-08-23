@@ -1,13 +1,13 @@
 import css from "./PersonsInfo.module.scss";
 
 import classNames from "classnames";
-import { professions } from "./config";
-import { capitalize } from "@src/utils/helpers";
+import { professions } from "./config/config";
+import { capitalize } from "@src/shared/lib/helpers";
 import { ProfessionT } from "@src/app/config/types";
 import { mockFilmById } from "@src/app/config/mockfilms";
 
 import { Link, useParams } from "react-router-dom";
-import NotFound from "@src/shared/NotFound";
+import NotFound from "@src/shared/ui/NotFound";
 
 const PersonsInfo = () => {
    const { persons } = mockFilmById;

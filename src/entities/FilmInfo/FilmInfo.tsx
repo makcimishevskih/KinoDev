@@ -4,11 +4,10 @@ import cn from "classnames";
 import { mockFilmById } from "@src/app/config/mockfilms";
 
 import Rating from "../Rating";
+import MainInfo from "./ui/MainInfo";
 import PersonsInfo from "./ui/PersonsInfo";
-
 import DetailedInfo from "./ui/DetailedInfo";
 import SequelsPrequels from "./ui/SequelsPrequels";
-import MainInfo from "./ui/MainInfo";
 
 const FilmInfo = () => {
    const film = mockFilmById;
@@ -31,7 +30,7 @@ const FilmInfo = () => {
          </div>
          {/* 3 MAIN SEQUELS REMAKES PREQUELS*/}
          {film.sequelsAndPrequels && (
-            <div className={cn(css.sequelsPrequels)}>
+            <div className={cn(css.sequelsPrequels, "mt-12")}>
                <SequelsPrequels sequelsPrequels={film.sequelsAndPrequels} />
             </div>
          )}
