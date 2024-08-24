@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const useUpdateSearchParams = (page: number) => {
-   const { type, order, sortField } = useCustomSelectorForSort();
+   const { type, order, sortField } = useCustomSelector();
 
    const [searchParams, setSearchParams] = useSearchParams();
 
@@ -16,21 +16,21 @@ const useUpdateSearchParams = (page: number) => {
 
    useEffect(() => {
       setSearchParams({ type, page: String(page), order });
-   }, [type, page]);
+   }, [type, page, order, setSearchParams]);
 
    useEffect(() => {
       if (sortField) {
          setSearchParams({
             ...searchParamsObj,
-            sortField: sortField,
+            sortField,
          });
       }
-   }, [sortField]);
+   }, [sortField, setSearchParams, searchParamsObj]);
 
    return { type, order, sortField };
 };
 
-const useCustomSelectorForSort = () => {
+const useCustomSelector = () => {
    const type = useAppSelector(selectType);
    const order = useAppSelector(selectOrder);
    const sortField = useAppSelector(selectSortField);

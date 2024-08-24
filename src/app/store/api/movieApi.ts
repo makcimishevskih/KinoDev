@@ -69,11 +69,11 @@ const movieApi = createApi({
          query() {
             return {
                // url: `/movie/random?type=${type}`,
-               url: `/movie/random`,
+               url: "/movie/random",
             };
          },
       }),
-      getTop250: builder.query<any, { page: number }>({
+      getTop250: builder.query<FilmT[], { page: number }>({
          query({ page = 1 }) {
             return {
                url: `/movie?page=${page}&limit=10&lists=top250`,

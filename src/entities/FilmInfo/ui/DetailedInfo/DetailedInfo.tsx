@@ -6,21 +6,12 @@ import { professions } from "./config";
 import { formatBudgetToUSD, formatShort } from "@src/shared/lib/helpers";
 
 import NotFound from "@src/shared/ui/NotFound";
-import AboutInfoContainer from "./ui/DetailContainer/DetailContainer";
+import DetailContainer from "./ui/DetailContainer/DetailContainer";
 
 interface DetailedInfoProps {
    data: FilmT;
    className?: string;
 }
-
-const Comp = ({ len, field, i }: { len: number; field: any; i: number }) => {
-   return (
-      <div className={cn(css.detail__value, "line-clamp-2")}>
-         <span>{field as string}</span>
-         {i !== len - 1 ? ", " : ""}
-      </div>
-   );
-};
 
 const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
    const values = {
@@ -40,40 +31,29 @@ const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
          formatBudgetToUSD(
             data.fees?.world?.value + data.fees?.usa?.value,
          )) || <NotFound>Нет данных</NotFound>,
+      filmDuration:
+         data.movieLength &&
+         `${Math.floor(data?.movieLength / 60) > 0 ? `${Math.floor(data?.movieLength / 60)} ч` : ""} ${Math.floor(data?.movieLength % 60) > 0 ? `${Math.floor(data?.movieLength % 60)} мин` : ""} `,
    };
 
-   const renderDataBefore = [
+   const renderDataBeforeProfessions = [
       { title: "Год производства", value: data.year },
       { title: "Страна", value: data.countries[0].name },
       {
          title: "Жанр",
          value: data.genres.map((genre, i) => (
-            <Comp
+            <DataItem
                key={i}
                i={i}
                len={data.genres.length}
-               field={genre.name}
+               field1={genre.name}
             />
          )),
-         // value: data.genres.map((genre, i) => (
-         //    <div
-         //       key={genre.name}
-         //       className={cn(css.detail__value, "line-clamp-2")}
-         //    >
-         //       <span>{genre.name}</span>
-         //       {data.genres && i !== data.genres?.length - 1 ? ", " : ""}
-         //    </div>
-         // )),
       },
       { title: "Слоган", value: data.slogan ? data.slogan : "-" },
    ];
 
-   // <Comp
-   //    data={data.genres}
-   //    field={"name"}
-   // />;
-
-   const renderDataAfter = [
+   const renderDataAfterProfessions = [
       { title: "Бюджет", value: values.budget },
       { title: "Сборы в США", value: values.feesUSA },
       {
@@ -84,15 +64,14 @@ const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
          title: "Зрители",
          value:
             data.audience &&
-            data.audience?.map((el, i) => (
-               <div
-                  key={el.count}
-                  className={cn(css.detail__value, "line-clamp-2")}
-               >
-                  <span>{el.country}</span>
-                  <span>{formatShort(el.count)}</span>
-                  {data.audience && i !== data.audience?.length - 1 ? ", " : ""}
-               </div>
+            data.audience.map((aud, i) => (
+               <DataItem
+                  key={i}
+                  i={i}
+                  len={data.genres.length}
+                  field1={aud.country}
+                  field2={formatShort(aud.count)}
+               />
             )),
       },
       {
@@ -107,9 +86,7 @@ const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
       },
       {
          title: "Время",
-         value:
-            data.movieLength &&
-            `${Math.floor(data.movieLength / 60) > 0 ? `${Math.floor(data.movieLength / 60)} ч` : ""} ${data.movieLength % 60} мин`,
+         value: values.filmDuration,
       },
    ];
 
@@ -120,18 +97,17 @@ const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
                {data.isSeries ? "О сериале" : "О фильме"}
             </h2>
 
-            {renderDataBefore.map(({ title, value }, i) => (
-               <AboutInfoContainer
+            {renderDataBeforeProfessions.map(({ title, value }, i) => (
+               <DetailContainer
                   key={i}
                   title={title}
                >
-                  {/*  */}
                   {value}
-               </AboutInfoContainer>
+               </DetailContainer>
             ))}
 
             {professions.map((profession) => (
-               <AboutInfoContainer
+               <DetailContainer
                   isClamp={true}
                   key={profession}
                   title={profession}
@@ -140,16 +116,36 @@ const DetailedInfo = ({ data, className }: DetailedInfoProps) => {
                />
             ))}
 
-            {renderDataAfter.map(({ title, value, className }) => (
-               <AboutInfoContainer
+            {renderDataAfterProfessions.map(({ title, value, className }) => (
+               <DetailContainer
                   key={title}
                   title={title}
                   className={className}
                >
                   {value}
-               </AboutInfoContainer>
+               </DetailContainer>
             ))}
          </div>
+      </div>
+   );
+};
+
+const DataItem = ({
+   len,
+   field1,
+   field2,
+   i,
+}: {
+   len: number;
+   field1: string;
+   field2?: string;
+   i: number;
+}) => {
+   return (
+      <div className={cn(css.detail__value, "line-clamp-2")}>
+         <span>{field1}</span>
+         {field2 && <span>{field2}</span>}
+         {i !== len - 1 ? ", " : ""}
       </div>
    );
 };

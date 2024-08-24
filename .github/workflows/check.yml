@@ -1,0 +1,7 @@
+# on:
+#   push:
+#     branches:
+#       - 'master'
+#      paths:
+#       - '**.ts'
+#       - '**.tsx'

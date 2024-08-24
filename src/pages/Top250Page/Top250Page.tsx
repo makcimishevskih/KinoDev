@@ -12,7 +12,7 @@ const Top250Page = () => {
    const data = mockTop250.docs;
 
    const { page, handlePage } = usePage();
-   const { type, order, sortField } = useUpdateSearchParams(page);
+   const params = useUpdateSearchParams(page);
 
    // import { useGetTop250Query } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/ui/Loader";
    // const { data, isLoading, error } = useGetTop250Query({ page }); if (isLoading) {return <Loader />;}
@@ -21,7 +21,7 @@ const Top250Page = () => {
    const dispatch = useAppDispatch();
    useEffect(() => {
       dispatch(changeType("movie"));
-   }, []);
+   }, [dispatch]);
    //
 
    if (!data || data.length === 0) {
@@ -33,11 +33,9 @@ const Top250Page = () => {
          <h2 className={css.title}>Top 250</h2>
          <FilmsContentWithPagination
             data={data}
-            type={type}
-            order={order}
-            sortField={sortField}
-            handlePage={handlePage}
             page={page}
+            handlePage={handlePage}
+            {...params}
          />
       </section>
    );

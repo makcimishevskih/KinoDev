@@ -2,13 +2,9 @@ import css from "./Search.module.scss";
 
 import { FormEvent, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-
-import Input from "@src/shared/ui/Input";
 import { xssValidation } from "@src/shared/lib/helpers";
 
-export const validate = (name: string) => {
-   return name;
-};
+import Input from "@src/shared/ui/Input";
 
 const Search = () => {
    const navigate = useNavigate();

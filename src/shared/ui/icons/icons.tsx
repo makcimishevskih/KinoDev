@@ -237,8 +237,6 @@ export const icons = {
       >
          <mask
             id="mask0_1_69"
-            // @ts-ignore-next-line
-            style="mask-type:alpha"
             maskUnits="userSpaceOnUse"
             x="0"
             y="0"

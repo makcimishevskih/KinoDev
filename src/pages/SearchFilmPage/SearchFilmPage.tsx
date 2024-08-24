@@ -28,6 +28,7 @@ const SearchFilmPage = () => {
       page === 1 ? 0 : page - 1 * 10,
       page * 10,
    );
+   //
 
    return (
       <div className={css.search}>

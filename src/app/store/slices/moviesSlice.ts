@@ -33,32 +33,31 @@ export const moviesSlice = createSlice({
       changSortField: (state, { payload }: PayloadAction<SortFieldT>) => {
          state.sortField = payload;
       },
-      addFilmToFavorite: (state, { payload }: PayloadAction<FilmT>) => {
+      changeFilmFavoriteStatus: (state, { payload }: PayloadAction<FilmT>) => {
+         if (!payload) return;
+
          const hasFilm = state.favoriteFilms.find(
             (film) => film.id === payload.id,
          );
 
-         if (hasFilm) return;
-         state.favoriteFilms.push(payload);
-      },
-      removeFilmFromFavorite: (
-         state,
-         { payload }: PayloadAction<number | undefined>,
-      ) => {
-         if (!payload) return;
+         if (hasFilm) {
+            state.favoriteFilms = state.favoriteFilms.filter(
+               (film) => film.id !== payload.id,
+            );
+            return;
+         }
 
-         state.favoriteFilms = state.favoriteFilms.filter(
-            (film) => film.id !== payload,
-         );
+         state.favoriteFilms.push(payload);
       },
    },
 });
 
 export const {
    changeType,
-   addFilmToFavorite,
-   removeFilmFromFavorite,
    changeOrder,
    changSortField,
+   // addFilmToFavorite,
+   // removeFilmFromFavorite,
+   changeFilmFavoriteStatus,
 } = moviesSlice.actions;
 export default moviesSlice.reducer;

@@ -5,15 +5,12 @@ import placeholder from "../../app/assets/placeholder.jpg";
 import heartFill from "../../app/assets/heart-fill.svg";
 import heartEmpty from "../../app/assets/heart-empty.svg";
 
-import { Link } from "react-router-dom";
-
-import {
-   addFilmToFavorite,
-   removeFilmFromFavorite,
-} from "@src/app/store/slices/moviesSlice";
+import { useCallback } from "react";
 import { useAppDispatch } from "@src/app/store";
+import { changeFilmFavoriteStatus } from "@src/app/store/slices/moviesSlice";
 
 import NotFound from "../../shared/ui/NotFound";
+import { Link } from "react-router-dom";
 import Button from "../../shared/ui/Button";
 import Rating from "../Rating";
 
@@ -34,11 +31,19 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
       alternativeName,
    } = film;
 
+   const dispatch = useAppDispatch();
+
+   const handleClick = useCallback(
+      (film: FilmT) => {
+         dispatch(changeFilmFavoriteStatus(film));
+      },
+      [dispatch],
+   );
+
    if (!film) {
       return <NotFound>Фильм не найден</NotFound>;
    }
 
-   const dispatch = useAppDispatch();
    const hasPoster = poster && (poster?.url || poster?.previewUrl);
 
    const hasReleaseDates =
@@ -48,14 +53,6 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
       releaseYears[0].end &&
       releaseYears[0].start &&
       releaseYears[0].end;
-
-   const handleDispatch = () => {
-      if (!hasInFilmsList) {
-         dispatch(addFilmToFavorite(film));
-      } else {
-         dispatch(removeFilmFromFavorite(film.id));
-      }
-   };
 
    return (
       <article className={css.film__wrapper}>
@@ -92,6 +89,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
                         <span>{year}</span>
                      )}
                   </div>
+
                   <div className={css.additionalInfo}>
                      <span>
                         {countries && countries[0].name} {type}
@@ -109,7 +107,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
                         className={css.like}
                         variant="user"
                         color="black"
-                        onClick={handleDispatch}
+                        onClick={() => handleClick(film)}
                         imgAlt={hasInFilmsList ? "like" : "unlike"}
                         img={hasInFilmsList ? heartFill : heartEmpty}
                      />

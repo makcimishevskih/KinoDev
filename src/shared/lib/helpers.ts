@@ -75,17 +75,20 @@ export const sortFilmsByOrder = <T>(a: T, b: T, order: OrderT): T[] => {
 };
 
 export const xssValidation = (str: string) => {
-   const chars = {
-      "&": "&amp;",
-      "<": "&lt;",
-      ">": "&gt;",
-      '"': "&uot;",
-      "\\": "&#39;",
-      "str/": "&#x2F;",
+   const chars: Record<string, string> = {
+      "s&": "&amp;",
+      "s<": "&lt;",
+      "s>": "&gt;",
+      's"': "&uot;",
+      "s\\": "&#39;",
+      "s/": "&#x2F;",
    };
 
-   return str.replace(/[&<>"'\/]/g, (char: string): string => {
-      // @ts-ignore-next-line
+   const replacer = (char: string): string => {
       return chars[`${char}`] ? chars[`${char}`] : char;
-   });
+   };
+
+   const reg = new RegExp("[&<>\"\\/]", "gi");
+
+   return str.replace(reg, replacer);
 };

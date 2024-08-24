@@ -1,6 +1,6 @@
 import path from "path";
-import { defineConfig, PluginOption } from "vite";
 import react from "@vitejs/plugin-react";
+import { defineConfig, PluginOption } from "vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 

@@ -11,7 +11,7 @@ import { useAppDispatch } from "@src/app/store";
 
 const AppPage = () => {
    const { page, handlePage } = usePage();
-   const { type, order, sortField } = useUpdateSearchParams(page);
+   const params = useUpdateSearchParams(page);
 
    // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/ui/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
 
@@ -19,7 +19,7 @@ const AppPage = () => {
    const dispatch = useAppDispatch();
    useEffect(() => {
       dispatch(changeType("anime"));
-   }, []);
+   }, [dispatch]);
    //
 
    const data = mockTenFilms.docs;
@@ -33,11 +33,9 @@ const AppPage = () => {
          <h2 className={css.title}>Main films list</h2>
          <FilmsContentWithPagination
             page={page}
-            type={type}
-            order={order}
             data={data}
-            sortField={sortField}
             handlePage={handlePage}
+            {...params}
          />
       </section>
    );

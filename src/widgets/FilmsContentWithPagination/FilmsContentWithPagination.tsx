@@ -36,7 +36,7 @@ const FilmsContentWithPagination = ({
    };
 
    const filterFilmsData = [...data]
-      .sort((a, b): any => handleSorting(a, b, order, sortField))
+      .sort((a, b) => handleSorting(a, b, order, sortField))
       .filter((el) => el.type === type)
       // DELETE AFTER UNCOMMENT USEQUERY
       .slice(page === 1 ? 0 : page - 1 * 10, page * 10);
