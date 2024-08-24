@@ -9,10 +9,11 @@ import { useCallback } from "react";
 import { useAppDispatch } from "@src/app/store";
 import { changeFilmFavoriteStatus } from "@src/app/store/slices/moviesSlice";
 
-import NotFound from "../../shared/ui/NotFound";
+import Rating from "../Rating";
 import { Link } from "react-router-dom";
 import Button from "../../shared/ui/Button";
-import Rating from "../Rating";
+import NotFound from "../../shared/ui/NotFound";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 interface FilmProps {
    film: FilmT;
@@ -61,13 +62,16 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
                className={css.film__link}
                to={`/film/${id}`}
             >
-               <img
+               <LazyLoadImage
+                  width={150}
+                  height={225}
+                  effect="blur"
                   style={{
                      objectFit: hasPoster ? "cover" : "fill",
                   }}
-                  className={css.poster}
+                  alt="poster"
                   src={hasPoster || placeholder}
-                  alt="url"
+                  className={css.poster}
                />
             </Link>
 

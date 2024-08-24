@@ -1,14 +1,16 @@
 import css from "./AppPage.module.scss";
 
-import { mockTenFilms } from "@src/app/config/mockfilms";
+import { useEffect } from "react";
 import { usePage } from "@src/shared/hooks/usePage";
+import { mockTenFilms } from "@src/app/config/mockfilms";
 
 import { useUpdateSearchParams } from "@src/shared/hooks/useUpdateSearchParams";
 import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination";
-import { useEffect } from "react";
 import { changeType } from "@src/app/store/slices/moviesSlice";
 import { useAppDispatch } from "@src/app/store";
-
+//
+import { transition } from "@src/shared/animation/transition";
+//
 const AppPage = () => {
    const { page, handlePage } = usePage();
    const params = useUpdateSearchParams(page);
@@ -40,4 +42,4 @@ const AppPage = () => {
       </section>
    );
 };
-export default AppPage;
+export default transition(AppPage);
