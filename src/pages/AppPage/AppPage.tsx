@@ -9,10 +9,6 @@ import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination"
 import { changeType } from "@src/app/store/slices/moviesSlice";
 import { useAppDispatch } from "@src/app/store";
 
-//
-import { transition } from "@src/shared/animation/transition";
-//
-
 const AppPage = () => {
    const { page, handlePage } = usePage();
    const params = useUpdateSearchParams(page);
@@ -33,16 +29,21 @@ const AppPage = () => {
    }
 
    return (
-      <section className={css.top250}>
-         <h2 className={css.title}>Main films list</h2>
-         <FilmsContentWithPagination
-            page={page}
-            data={data}
-            handlePage={handlePage}
-            {...params}
-         />
-      </section>
+      <>
+         <section
+            className={css.top250}
+            key="ssection"
+         >
+            <h2 className={css.title}>Main films list</h2>
+            <FilmsContentWithPagination
+               page={page}
+               data={data}
+               handlePage={handlePage}
+               {...params}
+            />
+         </section>
+      </>
    );
 };
 
-export default transition(AppPage);
+export default AppPage;

@@ -1,113 +1,111 @@
 @import "../../app/styles/mixins";
 @import "../../app/styles/vars";
 
-.film__wrapper {
-   .film {
-      position: relative;
-      @include flex(flex-start, flex-start, 32px);
+.film {
+   position: relative;
+   @include flex(flex-start, flex-start, 32px);
 
-      min-height: 250px;
-      padding: 24px;
+   min-height: 250px;
+   padding: 24px;
 
-      background-color: rgba(248, 248, 248, 1);
-      border-radius: 16px;
+   background-color: rgba(248, 248, 248, 1);
+   border-radius: 16px;
 
-      &:hover {
-         background-color: #eceaea;
+   &:hover {
+      background-color: #eceaea;
+   }
+
+   &::before,
+   &::after {
+      content: "";
+      width: 90%;
+      height: 2px;
+
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+      background-color: $BGCGray;
+   }
+
+   &::before {
+      top: 0;
+   }
+   &::after {
+      bottom: 0;
+   }
+
+   .film__link {
+      width: 150px;
+      min-width: 150px;
+      height: 220px;
+
+      .poster {
+         height: auto;
+         max-width: 100%;
+         height: 100%;
       }
+   }
 
-      &::before,
-      &::after {
-         content: "";
-         width: 90%;
-         height: 2px;
+   .wrapper {
+      @include flex(start, space-between, 24px);
+      flex-wrap: wrap;
+      padding: 4px 8px;
+      width: 100%;
 
-         position: absolute;
-         top: 0;
-         left: 50%;
-         transform: translateX(-50%);
+      .info {
+         @include flex(start, flex-start, 4px, column);
+         max-width: 60%;
 
-         background-color: $BGCGray;
-      }
+         .title {
+            @include flexWrap();
+            @include fontBase(20px, 24px, 500);
 
-      &::before {
-         top: 0;
-      }
-      &::after {
-         bottom: 0;
-      }
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+         }
+         .subtitle {
+            @include flex(start, flex-start, 8px);
+            flex-wrap: wrap;
 
-      .film__link {
-         width: 150px;
-         min-width: 150px;
-         height: 220px;
+            @include fontBase(16px, 20px);
 
-         .poster {
-            height: auto;
-            max-width: 100%;
-            height: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+         }
+
+         .genre,
+         .additionalInfo {
+            margin-top: 4px;
+
+            @include fontBase(14px, 16px);
+            color: rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
          }
       }
 
-      .wrapper {
-         @include flex(start, space-between, 24px);
-         flex-wrap: wrap;
-         padding: 4px 8px;
-         width: 100%;
+      .user {
+         @include flex(start, center, 8px);
 
-         .info {
-            @include flex(start, flex-start, 4px, column);
-            max-width: 60%;
+         width: 30%;
+         padding: 4px 12px;
 
-            .title {
-               @include flexWrap();
-               @include fontBase(20px, 24px, 500);
+         &__btns {
+            @include flex(flex-start, flex-start);
 
-               display: -webkit-box;
-               -webkit-box-orient: vertical;
-               -webkit-line-clamp: 2;
-               overflow: hidden;
-            }
-            .subtitle {
-               @include flex(start, flex-start, 8px);
-               flex-wrap: wrap;
+            .like {
+               width: 50px;
+               height: 50px;
+               padding: 8px;
 
-               @include fontBase(16px, 20px);
-
-               overflow: hidden;
-               white-space: nowrap;
-               text-overflow: ellipsis;
-            }
-
-            .genre,
-            .additionalInfo {
-               margin-top: 4px;
-
-               @include fontBase(14px, 16px);
-               color: rgba(0, 0, 0, 0.6);
-               overflow: hidden;
-               white-space: nowrap;
-               text-overflow: ellipsis;
-            }
-         }
-
-         .user {
-            @include flex(start, center, 8px);
-
-            width: 30%;
-            padding: 4px 12px;
-
-            &__btns {
-               @include flex(flex-start, flex-start);
-
-               .like {
-                  width: 50px;
-                  height: 50px;
-                  padding: 8px;
-
-                  border-radius: 50%;
-                  @include fontBase(0, 0);
-               }
+               border-radius: 50%;
+               @include fontBase(0, 0);
             }
          }
       }

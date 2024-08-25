@@ -13,6 +13,8 @@ import Pagination from "@src/shared/ui/Pagination";
 import NotFound from "@src/shared/ui/NotFound";
 import FilterSort from "@src/entities/FilterSort";
 import FilmsList from "@src/entities/FilmsList";
+import MoviesTypeList from "@src/features/MoviesTypeList";
+import Sort from "@src/features/Sort";
 
 const FilmsContentWithPagination = ({
    data,
@@ -44,11 +46,13 @@ const FilmsContentWithPagination = ({
    return (
       <>
          <div className={css.filterSort}>
-            <FilterSort
-               type={type}
-               order={order}
-               changeMovieType={changeMovieType}
-            />
+            <FilterSort>
+               <MoviesTypeList
+                  type={type}
+                  changeMovieType={changeMovieType}
+               />
+               <Sort order={order} />
+            </FilterSort>
          </div>
 
          <div className={css.content}>

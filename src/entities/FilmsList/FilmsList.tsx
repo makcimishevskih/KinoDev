@@ -16,13 +16,14 @@ const FilmsList = ({ films }: FilmsListProps) => {
       <ul className={css.films}>
          {films.map((film) => (
             <motion.li
-               key={film.id}
-               initial={{ x: "150%", opacity: 0 }}
-               animate={{ x: 0, opacity: 1 }}
+               key={`motion-film-list-${film.id}`}
+               initial={{ y: "150%", opacity: 0 }}
+               animate={{ y: 0, opacity: 1 }}
+               exit={{ y: 0, opacity: 1 }}
                transition={{
                   delay: 0.3,
                   type: "spring",
-                  bounce: 0.15,
+                  damping: 50,
                }}
             >
                <Film

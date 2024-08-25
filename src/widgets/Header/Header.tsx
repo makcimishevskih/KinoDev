@@ -9,7 +9,10 @@ import Navigation from "@src/shared/ui/Navigation";
 
 const Header = () => {
    return (
-      <div className={css.header}>
+      <div
+         className={css.header}
+         key="header-key"
+      >
          <Link to="/">
             <div className={css.logo}>
                <h1>КП</h1>

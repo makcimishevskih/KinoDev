@@ -5,7 +5,10 @@ import { footerLinks } from "./config";
 
 const Footer = () => {
    return (
-      <div className={css.footer}>
+      <div
+         key="footer-key"
+         className={css.footer}
+      >
          <div className={css.footer__links}>
             {footerLinks.map((link) => (
                <Link

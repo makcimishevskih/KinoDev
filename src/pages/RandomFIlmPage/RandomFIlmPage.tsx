@@ -1,6 +1,7 @@
 // import { changeType } from "@src/app/store/slices/moviesSlice";import MoviesTypeList from "../../features/MoviesTypeList";import { movieCategoriesEnT } from "@src/app/config/types";import { useGetRandomQuery } from "@src/app/store/api/movieApi";import Loader from "@src/shared/ui/Loader";
 import css from "./RandomFIlmPage.module.scss";
 
+import { motion } from "framer-motion";
 import { mockRandomFilm } from "@src/app/config/mockRandom";
 import {
    selectFavoriteMovies,
@@ -23,10 +24,22 @@ const RandomFIlmPage = () => {
       <section className={css.random}>
          <h2 className={css.title}>Random film</h2>
 
-         <Film
-            film={film}
-            hasInFilmsList={!!films.find((fav) => fav.id === film.id)}
-         />
+         <motion.div
+            key={`motion-article-random-film`}
+            initial={{ x: "1000px", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 0, opacity: 1 }}
+            transition={{
+               type: "spring",
+               duration: 1,
+            }}
+            className={css.film__wrapper}
+         >
+            <Film
+               film={film}
+               hasInFilmsList={!!films.find((fav) => fav.id === film.id)}
+            />
+         </motion.div>
 
          <div className={css.btns}>
             <Button

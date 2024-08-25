@@ -7,7 +7,7 @@ import {
 import { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
-const useUpdateSearchParams = (page: number) => {
+const useUpdateSearchParams = (page: number = 1) => {
    const { type, order, sortField } = useCustomSelector();
 
    const [searchParams, setSearchParams] = useSearchParams();

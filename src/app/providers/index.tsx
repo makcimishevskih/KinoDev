@@ -14,7 +14,10 @@ const Providers = () => {
          logoutUri={import.meta.env.VITE_KINDE_LOGOUT_URL}
          redirectUri={import.meta.env.VITE_KINDE_REDIRECT_URL}
       >
-         <AnimatePresence mode="wait">
+         <AnimatePresence
+            mode="wait"
+            // initial={false}
+         >
             <Provider store={store}>
                <RouterProvider router={router} />
             </Provider>

@@ -8,9 +8,6 @@ import { useEffect } from "react";
 import { useAppDispatch } from "@src/app/store";
 import { changeType } from "@src/app/store/slices/moviesSlice";
 
-//
-import { transition } from "@src/shared/animation/transition";
-//
 const Top250Page = () => {
    const data = mockTop250.docs;
 
@@ -45,4 +42,3 @@ const Top250Page = () => {
 };
 
 export default Top250Page;
-// export default transition(Top250Page);
