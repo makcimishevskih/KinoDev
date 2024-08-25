@@ -8,9 +8,11 @@ import { useUpdateSearchParams } from "@src/shared/hooks/useUpdateSearchParams";
 import FilmsContentWithPagination from "@src/widgets/FilmsContentWithPagination";
 import { changeType } from "@src/app/store/slices/moviesSlice";
 import { useAppDispatch } from "@src/app/store";
+
 //
 import { transition } from "@src/shared/animation/transition";
 //
+
 const AppPage = () => {
    const { page, handlePage } = usePage();
    const params = useUpdateSearchParams(page);
@@ -42,4 +44,5 @@ const AppPage = () => {
       </section>
    );
 };
+
 export default transition(AppPage);

@@ -3,6 +3,7 @@ import FilmT from "@src/app/config/types";
 
 import Film from "../Film";
 import { selectFavoriteMovies, useAppSelector } from "@src/app/store";
+import { motion } from "framer-motion";
 
 interface FilmsListProps {
    films: FilmT[];
@@ -12,17 +13,27 @@ const FilmsList = ({ films }: FilmsListProps) => {
    const favoriteFilms = useAppSelector(selectFavoriteMovies);
 
    return (
-      <div className={css.films}>
+      <ul className={css.films}>
          {films.map((film) => (
-            <Film
+            <motion.li
                key={film.id}
-               film={film}
-               hasInFilmsList={
-                  !!favoriteFilms.find((fav) => fav.id === film.id)
-               }
-            />
+               initial={{ x: "150%", opacity: 0 }}
+               animate={{ x: 0, opacity: 1 }}
+               transition={{
+                  delay: 0.3,
+                  type: "spring",
+                  bounce: 0.15,
+               }}
+            >
+               <Film
+                  film={film}
+                  hasInFilmsList={
+                     !!favoriteFilms.find((fav) => fav.id === film.id)
+                  }
+               />
+            </motion.li>
          ))}
-      </div>
+      </ul>
    );
 };
 export default FilmsList;

@@ -1,7 +1,6 @@
 import css from "./Film.module.scss";
 
 import FilmT from "@src/app/config/types";
-import placeholder from "../../app/assets/placeholder.jpg";
 import heartFill from "../../app/assets/heart-fill.svg";
 import heartEmpty from "../../app/assets/heart-empty.svg";
 
@@ -45,7 +44,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
       return <NotFound>Фильм не найден</NotFound>;
    }
 
-   const hasPoster = poster && (poster?.url || poster?.previewUrl);
+   const hasPoster = (poster && poster?.previewUrl) || poster?.url;
 
    const hasReleaseDates =
       releaseYears &&
@@ -62,17 +61,25 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
                className={css.film__link}
                to={`/film/${id}`}
             >
-               <LazyLoadImage
-                  width={150}
-                  height={225}
-                  effect="blur"
-                  style={{
-                     objectFit: hasPoster ? "cover" : "fill",
-                  }}
-                  alt="poster"
-                  src={hasPoster || placeholder}
-                  className={css.poster}
-               />
+               {hasPoster && (
+                  <LazyLoadImage
+                     width={150}
+                     height={225}
+                     effect="blur"
+                     style={{
+                        objectFit: hasPoster ? "cover" : "fill",
+                     }}
+                     wrapperProps={{
+                        // If you need to, you can tweak the effect transition using the wrapper style.
+                        style: { transitionDelay: "1s" },
+                     }}
+                     alt="poster"
+                     placeholderSrc={poster?.previewUrl || ""}
+                     src={hasPoster}
+                     className={css.poster}
+                     visibleByDefault={!!hasPoster}
+                  />
+               )}
             </Link>
 
             <div className={css.wrapper}>

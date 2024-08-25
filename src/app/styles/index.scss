@@ -41,6 +41,7 @@ button {
 button,
 a {
    color: $colorBlack;
+   transition: all 0.2s ease;
 
    &:hover {
       opacity: 0.5;

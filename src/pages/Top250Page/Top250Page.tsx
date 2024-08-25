@@ -43,4 +43,6 @@ const Top250Page = () => {
       </section>
    );
 };
-export default transition(Top250Page);
+
+export default Top250Page;
+// export default transition(Top250Page);
