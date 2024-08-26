@@ -12,7 +12,10 @@ const useUpdateSearchParams = (page: number = 1) => {
 
    const [searchParams, setSearchParams] = useSearchParams();
 
-   const searchParamsObj = useMemo(() => Object.fromEntries(searchParams), []);
+   const searchParamsObj = useMemo(
+      () => Object.fromEntries(searchParams),
+      [searchParams],
+   );
 
    useEffect(() => {
       setSearchParams({ type, page: String(page), order });
@@ -27,7 +30,7 @@ const useUpdateSearchParams = (page: number = 1) => {
       }
    }, [sortField, setSearchParams, searchParamsObj]);
 
-   return { type, order, sortField };
+   return { type, order, sortField, searchParams };
 };
 
 const useCustomSelector = () => {

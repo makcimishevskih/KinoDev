@@ -2,32 +2,27 @@
 @import " ../../../../../app/styles/vars";
 
 .navigation {
+   @include flex(center, center, 12px);
    .list {
-      @include flex(center, flex-start, 12px);
+      @include flex(center, center, 12px);
       flex-wrap: wrap;
 
       -ms-overflow-style: none;
       scrollbar-width: none;
 
       .item {
-         @include fontBase(15px, 18px, 500);
+         @include fontBase(20px, 22px, 500);
          overflow: hidden;
 
          color: $colorBlack;
          white-space: nowrap;
          background-color: $BGCWhite;
          cursor: pointer;
-         border-radius: 12px;
+         border-radius: 8px;
 
          .link {
-            padding: 8px 20px;
-            display: block;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-
             &.active {
-               // color: $BGCWhite;
+               color: $BGCWhite;
                background: linear-gradient(
                   150deg,
                   #e45808 16.44%,

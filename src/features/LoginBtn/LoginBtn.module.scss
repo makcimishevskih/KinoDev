@@ -1,6 +1,6 @@
+@import "../../app/styles/mixins";
+
 .login {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 20px;
+   @include flex(center, center, 8px);
+   flex-wrap: wrap;
 }

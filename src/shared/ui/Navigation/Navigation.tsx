@@ -1,9 +1,11 @@
 import css from "./Navigation.module.scss";
+import { navs } from "./config";
 
 import cn from "classnames";
-import { navs } from "./config";
-import { Link, useLocation } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
+import { Link, useLocation } from "react-router-dom";
+
+import Button from "../Button";
 
 const Navigation = () => {
    const { pathname } = useLocation();
@@ -19,17 +21,15 @@ const Navigation = () => {
          <ul className={css.list}>
             {navs.map((item) =>
                isProtected(item.protected) ? null : (
-                  <li
-                     className={css.item}
+                  <Link
+                     to={item.href}
                      key={item.label}
+                     className={css.item}
                   >
-                     <Link
-                        className={cnxActiveLink(item.href)}
-                        to={item.href}
-                     >
+                     <Button className={cnxActiveLink(item.href)}>
                         {item.label}
-                     </Link>
-                  </li>
+                     </Button>
+                  </Link>
                ),
             )}
          </ul>

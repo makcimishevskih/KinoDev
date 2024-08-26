@@ -1,23 +1,27 @@
 @import "../../app/styles/mixins";
 @import "../../app/styles/vars";
 
-.header {
-   @include flex(center, space-between);
-   min-height: 120px;
-   padding: 5px 20px;
+.wrapper {
+   .header {
+      @include flex(center, space-between, 12px);
+      min-height: 120px;
+      // height: 50%;
+      // height: 100vh;
+      padding: 8px 20px;
 
-   background-color: #141414;
-   color: $BGCWhite;
-}
+      background-color: #141414;
+      color: $BGCWhite;
+   }
 
-.logo {
-   @include flex(center, flex-start, 12px);
-}
+   .logo {
+      @include flex(center, flex-start, 12px);
+   }
 
-.logo h1 {
-   font-size: 2rem;
-}
-.logo img {
-   width: 100px;
-   height: 50px;
+   .logo h1 {
+      font-size: 2rem;
+   }
+   .logo img {
+      width: 100px;
+      height: 50px;
+   }
 }

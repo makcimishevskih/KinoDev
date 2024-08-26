@@ -5,8 +5,9 @@ import FilmT from "@src/app/config/types";
 import heartFill from "@src/app/assets/heart-fill.svg";
 import heartEmpty from "@src/app/assets/heart-empty.svg";
 
-import { useCallback } from "react";
+import cn from "classnames";
 import { useAppDispatch } from "@src/app/store";
+import { useCallback } from "react";
 import { changeFilmFavoriteStatus } from "@src/app/store/slices/moviesSlice";
 
 import Rating from "../Rating";
@@ -63,17 +64,15 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
             to={`/film/${id}`}
          >
             <LazyLoadImage
-               effect="blur"
+               className={cn(css.poster)}
                width={150}
                height={225}
                style={{
                   objectFit: hasPoster ? "cover" : "fill",
                }}
                alt="poster"
-               placeholderSrc={poster?.previewUrl || placeholder}
-               src={hasPoster || placeholder}
-               className={css.poster}
-               visibleByDefault={!!hasPoster}
+               src={hasPoster || ""}
+               placeholderSrc={placeholder}
             />
          </Link>
 

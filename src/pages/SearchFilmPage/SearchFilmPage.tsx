@@ -34,7 +34,7 @@ const SearchFilmPage = () => {
       <div className={css.search}>
          <h1
             className={css.title}
-            key={`search-title-key`}
+            key={"search-title-key"}
          >
             Searched results:
          </h1>
