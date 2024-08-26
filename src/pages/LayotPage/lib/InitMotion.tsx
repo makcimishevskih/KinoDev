@@ -1,7 +1,7 @@
 import css from "./InitMotion.module.scss";
 
 import { motion } from "framer-motion";
-import bg from "../../../app/assets/logo-kp/black_background/kinopoisk-logo-colored-on-blackbackground-rus.png";
+import bg from "@src/app/assets/logo-kp/black_background/kinopoisk-logo-colored-on-blackbackground-rus.png";
 
 const InitMotion = () => {
    return (

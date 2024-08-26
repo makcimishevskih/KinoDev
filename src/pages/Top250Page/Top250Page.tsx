@@ -30,7 +30,12 @@ const Top250Page = () => {
 
    return (
       <section className={css.top250}>
-         <h2 className={css.title}>Top 250</h2>
+         <h2
+            className={css.title}
+            key={"top250-title-key"}
+         >
+            Top 250
+         </h2>
          <FilmsContentWithPagination
             data={data}
             page={page}

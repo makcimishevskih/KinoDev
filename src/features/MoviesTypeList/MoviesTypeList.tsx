@@ -14,7 +14,10 @@ const MoviesTypeList = ({ type, changeMovieType }: MoviesTypeListProps) => {
       cn(css.movieCategories__item, category === type ? css.active : "");
 
    return (
-      <ul className={css.movieCategories__list}>
+      <ul
+         className={css.movieCategories__list}
+         key={`typelist-${type}-key`}
+      >
          {movieCategories.map((category) => (
             <li
                key={category}

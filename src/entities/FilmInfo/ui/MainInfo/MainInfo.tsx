@@ -9,7 +9,7 @@ interface MainInfoProps {
 const MainInfo = ({ film }: MainInfoProps) => {
    return (
       <div className={css.info}>
-         <h1 className={css.title}>
+         <h2 className={css.title}>
             <span>{film.name}</span>
             <span>
                {film.isSeries &&
@@ -20,7 +20,7 @@ const MainInfo = ({ film }: MainInfoProps) => {
                   ? `сериал (${film?.releaseYears}-${film.releaseYears[0].end})`
                   : `(${film.year})`}
             </span>
-         </h1>
+         </h2>
          <h2 className={css.subtitle}>
             <span>{film.alternativeName}</span>
             <span>{film.ageRating ? `${film.ageRating}+` : null}</span>

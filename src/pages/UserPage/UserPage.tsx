@@ -1,9 +1,8 @@
 import css from "./UserPage.module.scss";
+import placeholder from "@src/app/assets/placeholder.jpg";
 
 import { Navigate } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
-
-import placeholder from "../../app/assets/placeholder.jpg";
 
 import Loader from "@src/shared/ui/Loader";
 import Button from "@src/shared/ui/Button";

@@ -1,6 +1,6 @@
 import css from "./FilmPage.module.scss";
 
-import FilmInfo from "../../entities/FilmInfo";
+import FilmInfo from "@src/entities/FilmInfo";
 import MediaInfo from "@src/entities/MediaInfo";
 
 const FilmPage = () => {

@@ -9,7 +9,12 @@ const FavoritePage = () => {
 
    return (
       <div className={css.favorite}>
-         <h2 className={css.title}>Favorite</h2>
+         <h1
+            className={css.title}
+            key={"favorite-title-key"}
+         >
+            Favorite
+         </h1>
 
          <div className={css.films}>
             {favoriteFilms.length !== 0 ? (

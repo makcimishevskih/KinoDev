@@ -14,23 +14,22 @@ const FilmsList = ({ films }: FilmsListProps) => {
 
    return (
       <ul className={css.films}>
-         {films.map((film) => (
+         {films.map((film, i) => (
             <motion.li
                key={`motion-film-list-${film.id}`}
                initial={{ y: "150%", opacity: 0 }}
                animate={{ y: 0, opacity: 1 }}
                exit={{ y: 0, opacity: 1 }}
                transition={{
-                  delay: 0.3,
-                  type: "spring",
-                  damping: 50,
+                  ease: "easeInOut",
+                  delay: i * 0.4,
                }}
             >
                <Film
                   film={film}
-                  hasInFilmsList={
-                     !!favoriteFilms.find((fav) => fav.id === film.id)
-                  }
+                  hasInFilmsList={favoriteFilms.some(
+                     (fav) => fav.id === film.id,
+                  )}
                />
             </motion.li>
          ))}

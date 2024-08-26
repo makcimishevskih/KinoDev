@@ -1,5 +1,5 @@
 import css from "./LoginBtn.module.scss";
-import placeholder from "../../app/assets/placeholder.jpg";
+import placeholder from "@src/app/assets/placeholder.jpg";
 
 import { useNavigate } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";

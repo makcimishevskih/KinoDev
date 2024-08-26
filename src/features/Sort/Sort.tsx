@@ -1,6 +1,5 @@
 import css from "./Sort.module.scss";
-
-import arrow from "../../app/assets/arrowUp.svg";
+import arrow from "@src/app/assets/arrowUp.svg";
 
 import cn from "classnames";
 import { useAppDispatch } from "@src/app/store";

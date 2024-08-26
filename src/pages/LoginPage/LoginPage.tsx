@@ -3,7 +3,7 @@ import css from "./LoginPage.module.scss";
 import { useNavigate } from "react-router-dom";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-react";
 
-import Button from "../../shared/ui/Button";
+import Button from "@src/shared/ui/Button";
 import Modal from "@src/shared/ui/Modal";
 
 export const Login = () => {
@@ -15,7 +15,10 @@ export const Login = () => {
    }
 
    return (
-      <div className={css.layout}>
+      <div
+         className={css.layout}
+         key={"login-modal-key"}
+      >
          <Modal>
             <div className={css.wrapper}>
                <h2 className={css.title}>Please login or register</h2>

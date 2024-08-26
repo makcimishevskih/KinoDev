@@ -32,7 +32,12 @@ const SearchFilmPage = () => {
 
    return (
       <div className={css.search}>
-         <h2 className={css.title}>Searched results:</h2>
+         <h1
+            className={css.title}
+            key={`search-title-key`}
+         >
+            Searched results:
+         </h1>
          {filterFilmsData.length !== 0 ? (
             <div className={css.wrapper}>
                <FilmsList films={filterFilmsData} />

@@ -2,7 +2,7 @@ import css from "./Card.module.scss";
 
 import classNames from "classnames";
 import { MoviesT } from "@src/app/config/types";
-import placeholder from "../../../../../../app/assets/placeholder.jpg";
+import placeholder from "@src/app/assets/placeholder.jpg";
 
 interface CardI {
    movie: MoviesT;

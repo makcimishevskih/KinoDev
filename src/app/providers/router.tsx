@@ -1,15 +1,13 @@
 import paths from "./config";
 
-import { createBrowserRouter } from "react-router-dom";
 import { Suspense } from "react";
+import { createBrowserRouter } from "react-router-dom";
 
 import Loader from "@src/shared/ui/Loader";
 import AppPage from "@src/pages/AppPage";
 import ErrorPage from "@src/pages/ErrorPage";
 import LayoutPage from "@src/pages/LayotPage";
 import FavoritePage from "@src/pages/FavoritePage";
-// import Top250Page from "@src/pages/Top250Page";
-// import RandomFIlmPage from "@src/pages/RandomFIlmPage";
 
 import {
    FilmPage,

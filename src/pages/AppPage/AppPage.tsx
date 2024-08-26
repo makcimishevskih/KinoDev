@@ -30,11 +30,13 @@ const AppPage = () => {
 
    return (
       <>
-         <section
-            className={css.top250}
-            key="ssection"
-         >
-            <h2 className={css.title}>Main films list</h2>
+         <section className={css.top250}>
+            <h1
+               className={css.title}
+               key={"main-title-key"}
+            >
+               Main films list
+            </h1>
             <FilmsContentWithPagination
                page={page}
                data={data}

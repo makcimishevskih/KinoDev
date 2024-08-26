@@ -1,4 +1,4 @@
-// import { changeType } from "@src/app/store/slices/moviesSlice";import MoviesTypeList from "../../features/MoviesTypeList";import { movieCategoriesEnT } from "@src/app/config/types";import { useGetRandomQuery } from "@src/app/store/api/movieApi";import Loader from "@src/shared/ui/Loader";
+// import { changeType } from "@src/app/store/slices/moviesSlice";import MoviesTypeList from "@src/features/MoviesTypeList";import { movieCategoriesEnT } from "@src/app/config/types";import { useGetRandomQuery } from "@src/app/store/api/movieApi";import Loader from "@src/shared/ui/Loader";
 import css from "./RandomFIlmPage.module.scss";
 
 import { motion } from "framer-motion";
@@ -22,14 +22,19 @@ const RandomFIlmPage = () => {
 
    return (
       <section className={css.random}>
-         <h2 className={css.title}>Random film</h2>
+         <h1
+            key={"random-title-key"}
+            className={css.title}
+         >
+            Random film
+         </h1>
 
          <motion.div
             key={`motion-article-random-film`}
-            initial={{ x: "1000px", opacity: 0 }}
+            initial={{ x: "150%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
-            exit={{ x: 0, opacity: 1 }}
             transition={{
+               delay: 0.4,
                type: "spring",
                duration: 1,
             }}

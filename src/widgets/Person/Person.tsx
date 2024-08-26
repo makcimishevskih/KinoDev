@@ -1,6 +1,6 @@
 import css from "./Person.module.scss";
 
-import placeholder from "../../app/assets/placeholder.jpg";
+import placeholder from "@src/app/assets/placeholder.jpg";
 import { PersonsT } from "@src/app/config/types";
 import {
    capitalize,
@@ -8,7 +8,7 @@ import {
    getPersonYears,
 } from "@src/shared/lib/helpers";
 
-import AboutInfoContainer from "../../entities/FilmInfo/ui/DetailedInfo/ui/DetailContainer";
+import AboutInfoContainer from "@src/entities/FilmInfo/ui/DetailedInfo/ui/DetailContainer";
 import { Link } from "react-router-dom";
 
 interface PersonsProps {
@@ -88,11 +88,11 @@ const Person = ({ data }: PersonsProps) => {
          </div>
 
          <div className={css.info}>
-            <h1 className={css.title}>{data.name}</h1>
-            <h2 className={css.subtitle}>{data.enName}</h2>
+            <h2 className={css.title}>{data.name}</h2>
+            <h3 className={css.subtitle}>{data.enName}</h3>
             <div className={css.wrapper}>
                <div className={css.details}>
-                  <h2 className={css.subtitle}>О персоне</h2>
+                  <h3 className={css.subtitle}>О персоне</h3>
                   {renderData.map(({ title, value }) => (
                      <AboutInfoContainer
                         key={title}

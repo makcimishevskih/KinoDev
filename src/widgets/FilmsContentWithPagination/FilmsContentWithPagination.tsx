@@ -46,7 +46,7 @@ const FilmsContentWithPagination = ({
    return (
       <>
          <div className={css.filterSort}>
-            <FilterSort>
+            <FilterSort key={`filter-sort-${type}-key`}>
                <MoviesTypeList
                   type={type}
                   changeMovieType={changeMovieType}
