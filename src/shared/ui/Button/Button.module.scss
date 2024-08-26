@@ -3,7 +3,7 @@
 
 .button {
    @include flex(center, space-between, 12px);
-   @include fontBase(20px, 20px, 500);
+   @include fontBase(16px, 18px, 500);
 
    white-space: nowrap;
    text-transform: capitalize;

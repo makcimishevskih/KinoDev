@@ -1,10 +1,10 @@
 @import "reset";
 @import "base";
 @import "vars";
-@import "transition";
 
 html,
 #root,
+body,
 .app {
    height: 100%;
 }

@@ -5,8 +5,8 @@
    .header {
       @include flex(center, space-between, 12px);
       min-height: 120px;
-      // height: 50%;
-      // height: 100vh;
+      // height: -webkit-fill-available;
+
       padding: 8px 20px;
 
       background-color: #141414;

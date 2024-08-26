@@ -3,7 +3,9 @@
 
 .loaderWrapper {
    width: 100%;
-   height: 100vh;
+   // height: 100vh;
+   height: 100%;
+   height: -webkit-fill-available;
    @include flex(center, center, 0px);
    margin: 0 auto;
 

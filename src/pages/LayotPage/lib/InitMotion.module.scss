@@ -1,12 +1,22 @@
 .main_animation {
-   overflow: hidden;
+   // overflow: hidden;
    position: absolute;
    top: 0;
    left: 0;
    bottom: 0;
 
    width: 100%;
-   height: 100vh;
+   // height: 100vh;
+   height: -webkit-fill-available;
+
+   @supports (-webkit-touch-callout: none) {
+      .main_animation {
+         &.vh100 {
+            height: -webkit-fill-available;
+         }
+      }
+   }
+
    z-index: 100;
 
    user-select: none;

@@ -36,8 +36,15 @@ ol[role="list"] {
 /* Set core body defaults */
 body {
    // min-height: 100vh;
-   min-height: 100%;
+
    line-height: 1.5;
+   // @supports (-webkit-touch-callout: none) {
+   //    body {
+   //       &.vh100 {
+   //          height: -webkit-fill-available;
+   //       }
+   //    }
+   // }
 }
 
 /* Set shorter line heights on headings and interactive elements */

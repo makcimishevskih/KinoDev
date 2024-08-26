@@ -2,6 +2,7 @@ import css from "./InitMotion.module.scss";
 
 import { motion } from "framer-motion";
 import logo from "@src/app/assets/logo-kp/black_background/kinopoisk-logo-colored-on-blackbackground-rus.png";
+import classNames from "classnames";
 
 const InitMotion = () => {
    return (
@@ -9,7 +10,7 @@ const InitMotion = () => {
          key={"motion-main-initial"}
          viewport={{ once: true }}
          whileInView={{ opacity: 1 }}
-         className={css.main_animation}
+         className={classNames(css.main_animation, css.vh100)}
          initial={{
             clipPath: `circle(${2000 * 2 + 200}px at 40px 40px)`,
          }}
