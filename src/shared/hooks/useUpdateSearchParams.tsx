@@ -4,7 +4,7 @@ import {
    selectSortField,
    selectType,
 } from "@src/app/store/selectors";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
 const useUpdateSearchParams = (page: number = 1) => {
@@ -12,7 +12,7 @@ const useUpdateSearchParams = (page: number = 1) => {
 
    const [searchParams, setSearchParams] = useSearchParams();
 
-   const searchParamsObj = Object.fromEntries(searchParams);
+   const searchParamsObj = useMemo(() => Object.fromEntries(searchParams), []);
 
    useEffect(() => {
       setSearchParams({ type, page: String(page), order });

@@ -31,8 +31,8 @@ const RandomFIlmPage = () => {
 
          <motion.div
             key={`motion-article-random-film`}
-            initial={{ x: "150%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            initial={{ y: "150%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             transition={{
                delay: 0.4,
                type: "spring",
@@ -44,16 +44,16 @@ const RandomFIlmPage = () => {
                film={film}
                hasInFilmsList={!!films.find((fav) => fav.id === film.id)}
             />
-         </motion.div>
 
-         <div className={css.btns}>
-            <Button
-               color="black"
-               // onClick={() => refetch()}
-            >
-               Change film
-            </Button>
-         </div>
+            <div className={css.btns}>
+               <Button
+                  color="black"
+                  // onClick={() => refetch()}
+               >
+                  Change film
+               </Button>
+            </div>
+         </motion.div>
       </section>
    );
 };
