@@ -1,9 +1,9 @@
-@import "../../app/styles/mixins";
-@import "../../app/styles/vars";
+@import "../../app/styles/mixins.scss";
+@import "../../app/styles/vars.scss";
 
 .sort {
-   background-color: #f2f2f2;
    border-radius: 8px;
+   background-color: #f2f2f2;
    .list {
       display: flex;
 
@@ -11,10 +11,16 @@
          @include flex(center, flex-start, 8px);
          @include fontBase(20px, 24px);
          position: relative;
-
          padding: 12px 20px;
+
          border-radius: 8px;
          cursor: pointer;
+
+         &.active {
+            color: $colorWhite;
+            background-color: $BGCBlack;
+         }
+
          &:not(:last-child)::after {
             position: absolute;
 
@@ -28,22 +34,27 @@
             width: 2px;
          }
 
-         .title {
-            @include fontBase(15px, 18px, 500);
-            white-space: nowrap;
-            color: $colorBlack;
-         }
-
          .arrow {
             user-select: none;
             width: 20px;
             height: 20px;
+            transition: 0.2s ease-in-out;
+            background-color: $BGCWhite;
+            border-radius: 50%;
+            padding: 4px;
+
             &.asc {
                transform: rotate(0deg);
             }
             &.desc {
                transform: rotate(180deg);
             }
+         }
+
+         .title {
+            @include fontBase(15px, 18px, 500);
+            white-space: nowrap;
+            color: inherit;
          }
       }
    }

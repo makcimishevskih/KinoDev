@@ -9,9 +9,10 @@ import { sortTypes } from "./config";
 
 interface SortProps {
    order: OrderT;
+   sortField: SortFieldT;
 }
 
-const Sort = ({ order }: SortProps) => {
+const Sort = ({ order, sortField }: SortProps) => {
    const arrowCnx = cn(css.arrow, css[order]);
    const dispatch = useAppDispatch();
 
@@ -20,12 +21,15 @@ const Sort = ({ order }: SortProps) => {
       dispatch(changeOrder());
    };
 
+   const itemCns = (label: SortFieldT) =>
+      cn(css.item, label === sortField ? css.active : "");
+
    return (
       <div className={css.sort}>
          <ul className={css.list}>
             {sortTypes.map(({ label, sortable }) => (
                <li
-                  className={css.item}
+                  className={itemCns(label)}
                   key={label}
                   onClick={() =>
                      sortable ? handleSortFieldDispatch(label) : undefined

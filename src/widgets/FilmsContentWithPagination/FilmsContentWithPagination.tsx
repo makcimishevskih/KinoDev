@@ -51,7 +51,10 @@ const FilmsContentWithPagination = ({
                   type={type}
                   changeMovieType={changeMovieType}
                />
-               <Sort order={order} />
+               <Sort
+                  order={order}
+                  sortField={sortField}
+               />
             </FilterSort>
          </div>
 

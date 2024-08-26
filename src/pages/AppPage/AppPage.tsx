@@ -17,6 +17,8 @@ const AppPage = () => {
       setPage(page);
    };
 
+   console.log(Number.isNaN == isNaN);
+
    const params = useUpdateSearchParams(page);
 
    // import { useGetMoviesQuery } from "@src/app/store/api/movieApi"; import Loader from "@src/shared/ui/Loader"; const { data, isLoading, error } = useGetMoviesQuery({ page, type }); if (isLoading) {return <Loader />;}
@@ -36,12 +38,12 @@ const AppPage = () => {
 
    return (
       <>
-         <section className={css.top250}>
+         <section className={css.main}>
             <h1
                className={css.title}
                key={"main-title-key"}
             >
-               Main films list
+               Main films
             </h1>
             <FilmsContentWithPagination
                page={page}
