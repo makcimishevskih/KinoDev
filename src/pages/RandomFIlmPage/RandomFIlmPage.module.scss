@@ -2,6 +2,7 @@
 
 .random {
    .title {
+      @include fontBase(28px, 32px);
       margin: 20px;
    }
    .btns {

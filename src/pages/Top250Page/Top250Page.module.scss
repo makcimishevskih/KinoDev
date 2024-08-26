@@ -1,5 +1,9 @@
+@import "../../app/styles/mixins.scss";
+
 .top250 {
    .title {
+      @include fontBase(28px, 32px);
+
       margin: 20px;
    }
 }

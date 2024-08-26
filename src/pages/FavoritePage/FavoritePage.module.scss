@@ -1,3 +1,8 @@
+@import "../../app/styles/mixins.scss";
+
 .favorite {
-   margin-top: 20px;
+   .title {
+      margin-top: 20px;
+      @include fontBase(28px, 32px);
+   }
 }

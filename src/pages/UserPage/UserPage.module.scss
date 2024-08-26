@@ -1,8 +1,8 @@
 @import "../../app/styles/mixins.scss";
 
 .user {
-   margin-top: 20px;
    @include flex(start, center, 20px);
+   margin-top: 20px;
 
    .img__wrapper {
       overflow: hidden;

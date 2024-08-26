@@ -1,7 +1,9 @@
+@import "../../app/styles/mixins.scss";
 .search {
    height: 100%;
    margin-top: 20px;
    .title {
+      @include fontBase(28px, 32px);
    }
 
    .wrapper {

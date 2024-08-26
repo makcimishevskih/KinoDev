@@ -34,7 +34,7 @@ const router = createBrowserRouter([
          {
             path: paths.LOGIN,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <LoginPage />
                </Suspense>
             ),
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
          {
             path: paths.USER,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <UserPage />
                </Suspense>
             ),
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
          {
             path: paths.FAVORITE,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <FavoritePage />
                </Suspense>
             ),
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
          {
             path: paths.FILM_BY_ID,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <FilmPage />
                </Suspense>
             ),
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
          {
             path: paths.SEARCH_BY_QUERY,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <SearchFilmPage />
                </Suspense>
             ),
@@ -79,7 +79,7 @@ const router = createBrowserRouter([
          {
             path: paths.PERSONS_BY_FILM_ID,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <PersonsListPage />
                </Suspense>
             ),
@@ -88,7 +88,7 @@ const router = createBrowserRouter([
          {
             path: paths.PERSON_BY_ID,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <PersonIdPage />
                </Suspense>
             ),
@@ -97,7 +97,7 @@ const router = createBrowserRouter([
          {
             path: paths.TOP250,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <Top250Page />
                </Suspense>
             ),
@@ -106,7 +106,7 @@ const router = createBrowserRouter([
          {
             path: paths.RANDOM,
             element: (
-               <Suspense fallback={<Loader />}>
+               <Suspense fallback={<Loader size="xl" />}>
                   <RandomFIlmPage />
                </Suspense>
             ),
