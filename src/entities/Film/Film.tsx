@@ -65,8 +65,6 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
          >
             <LazyLoadImage
                className={cn(css.poster)}
-               width={150}
-               height={225}
                style={{
                   objectFit: hasPoster ? "cover" : "fill",
                }}

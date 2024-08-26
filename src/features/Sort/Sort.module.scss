@@ -4,8 +4,13 @@
 .sort {
    border-radius: 8px;
    background-color: #f2f2f2;
+
    .list {
       display: flex;
+      @media screen and (max-width: 520px) {
+         flex-direction: column;
+         gap: 4px;
+      }
 
       .item {
          @include flex(center, flex-start, 8px);
@@ -31,7 +36,22 @@
 
             content: "";
             height: 100%;
-            width: 2px;
+            width: 4px;
+
+            @media screen and (max-width: 520px) {
+               background-color: $colorWhite;
+               top: 100%;
+               right: 0;
+               width: 100%;
+               height: 4px;
+               transform: translate(0%);
+            }
+         }
+
+         .title {
+            @include fontBase(15px, 18px, 500);
+            white-space: nowrap;
+            color: inherit;
          }
 
          .arrow {
@@ -49,12 +69,6 @@
             &.desc {
                transform: rotate(180deg);
             }
-         }
-
-         .title {
-            @include fontBase(15px, 18px, 500);
-            white-space: nowrap;
-            color: inherit;
          }
       }
    }

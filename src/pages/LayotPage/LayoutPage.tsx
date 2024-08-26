@@ -1,21 +1,13 @@
+import { InitMotion } from "./lib";
+import useVisibilityleByTimer from "@src/shared/hooks/useVisibilityleByTimer";
+
 import { Outlet } from "react-router-dom";
 
 import Header from "@src/widgets/Header";
 import Footer from "@src/widgets/Footer";
 
-import { InitMotion } from "./lib";
-import { useEffect, useState } from "react";
-
 const LayoutPage = () => {
-   const [isVisible, setIsVisible] = useState(true);
-
-   useEffect(() => {
-      const id = setTimeout(() => {
-         setIsVisible(false);
-      }, 2000);
-
-      return () => clearTimeout(id);
-   }, []);
+   const { isVisible } = useVisibilityleByTimer(1800);
 
    return (
       <div className="app">

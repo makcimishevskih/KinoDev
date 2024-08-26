@@ -9,6 +9,10 @@
    text-transform: capitalize;
    cursor: pointer;
 
+   @media screen and (max-width: 570px) {
+      @include fontBase(14px, 16px, 500);
+   }
+
    &.button_black {
       color: $BGCWhite;
       background-color: $colorBlack;
@@ -21,6 +25,10 @@
    &.button_default {
       padding: 8px 12px;
       border-radius: 8px;
+
+      @media screen and (max-width: 520px) {
+         padding: 4px 8px;
+      }
    }
 
    &.button_close {

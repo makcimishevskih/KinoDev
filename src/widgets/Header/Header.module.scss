@@ -5,20 +5,34 @@
    .header {
       @include flex(center, space-between, 12px);
       min-height: 120px;
-      // height: -webkit-fill-available;
 
       padding: 8px 20px;
 
       background-color: #141414;
       color: $BGCWhite;
+      @include flex(center, flex-start, 12px);
+
+      @media screen and (max-width: 500px) {
+         padding: 4px 12px;
+      }
    }
 
    .logo {
       @include flex(center, flex-start, 12px);
+
+      @media screen and (max-width: 666px) {
+         svg {
+            display: none;
+         }
+      }
    }
 
    .logo h1 {
       font-size: 2rem;
+
+      @media screen and (max-width: 500px) {
+         font-size: 1.8rem;
+      }
    }
    .logo img {
       width: 100px;

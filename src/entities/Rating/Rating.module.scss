@@ -1,13 +1,19 @@
 @import "../../app/styles/mixins.scss";
 
 .rating {
-   width: 200px;
+   @media screen and (max-width: 410px) {
+      width: 100%;
+   }
 
    .rate {
       @include flex(center, flex-start, 12px);
 
       & > span {
          @include fontBase(28px, 34px, 900);
+
+         @media screen and (max-width: 570px) {
+            @include fontBase(24px, 26px, 900);
+         }
       }
 
       &.gold {
