@@ -63,6 +63,7 @@ const Film = ({ hasInFilmsList, film }: FilmProps) => {
             to={`/film/${id}`}
          >
             <LazyLoadImage
+               effect="blur"
                width={150}
                height={225}
                style={{
