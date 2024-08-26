@@ -34,6 +34,7 @@
       "vite-plugin-vercel": "^9.0.1"
    },
    "devDependencies": {
+      "@rollup/plugin-terser": "^0.4.4",
       "@types/node": "^22.2.0",
       "@types/react": "^18.3.3",
       "@types/react-dom": "^18.3.0",
@@ -57,7 +58,6 @@
       "rollup-plugin-visualizer": "^5.12.0",
       "sharp": "^0.33.5",
       "svgo": "^3.3.2",
-      "terser": "^5.31.6",
       "typescript": "^5.2.2",
       "vite": "^5.3.4",
       "vite-plugin-image-optimizer": "^1.1.8"

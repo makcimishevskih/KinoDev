@@ -3,10 +3,17 @@ import react from "@vitejs/plugin-react";
 import { defineConfig, PluginOption } from "vite";
 import { visualizer } from "rollup-plugin-visualizer";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import terser from "@rollup/plugin-terser";
 
 // https://vitejs.dev/config/
 export default defineConfig({
    plugins: [
+      terser({
+         compress: {
+            defaults: false,
+            drop_console: true,
+         },
+      }),
       react({
          babel: {
             parserOpts: {
