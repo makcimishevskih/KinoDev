@@ -3,7 +3,6 @@
 
 .navigation {
    .list {
-      margin: 24px 44px;
       @include flex(center, flex-start, 12px);
       flex-wrap: wrap;
 

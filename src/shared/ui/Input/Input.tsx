@@ -14,23 +14,25 @@ interface InputI {
 const Input = forwardRef<HTMLInputElement, InputI>(
    ({ iconName, height, width }, ref) => {
       return (
-         <div className={css.wrapper}>
-            <div className={css.input__wrapper}>
-               {iconName && (
-                  <IconComponent
-                     name={iconName}
-                     width={width}
-                     height={height}
-                     className={css.icon__search}
-                  />
-               )}
-               <input
-                  ref={ref}
-                  type="text"
-                  className={css.input}
+         <label
+            htmlFor={"input"}
+            className={css.wrapper}
+         >
+            {iconName && (
+               <IconComponent
+                  name={iconName}
+                  width={width}
+                  height={height}
+                  className={css.icon__search}
                />
-            </div>
-         </div>
+            )}
+            <input
+               id={"input"}
+               ref={ref}
+               type="text"
+               className={css.input}
+            />
+         </label>
       );
    },
 );

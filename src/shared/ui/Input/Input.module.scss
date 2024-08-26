@@ -2,26 +2,41 @@
 @import "../../../app/styles/vars";
 
 .wrapper {
-   .input__wrapper {
-      @include flex(center, flex-start);
-      padding: 0 10px;
+   @include flex(center, flex-start);
+   padding: 0 10px;
 
-      border-radius: 8px;
-      background-color: hsla(0, 0%, 100%, 0.15);
+   border-radius: 8px;
+   background-color: hsla(0, 0%, 100%, 0.15);
+   cursor: pointer;
+   border: 3px solid transparent;
 
-      .input {
-         @include fontBase(15px, 18px);
+   &:focus-within {
+      animation: pulse 2s ease infinite;
+      border: 3px solid #ffd25e;
+   }
 
-         width: 100%;
-         padding: 8px 0 8px 16px;
+   .input {
+      @include fontBase(15px, 18px);
 
-         color: $BGCWhite;
-         outline: none;
-         background: transparent;
-         border: 1px solid transparent;
-         &:focus {
-            border: 3px solid #ffd25e 16.44%;
-         }
-      }
+      width: 100%;
+      padding: 4px 0 4px 12px;
+      font-size: 1.2rem;
+      color: $BGCWhite;
+      outline: none;
+      background: transparent;
+      border: none;
+      caret-color: #ffd25e;
+   }
+}
+
+@keyframes pulse {
+   0% {
+      border: 3px solid transparent;
+   }
+   50% {
+      border: 3px solid #ffd25e;
+   }
+   100% {
+      border: 3px solid transparent;
    }
 }
