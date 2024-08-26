@@ -19,6 +19,9 @@ const InitMotion = () => {
             ease: "easeInOut",
             delay: 0.4,
             duration: 1.2,
+            transitionEnd: {
+               display: "none",
+            },
          }}
          exit={{
             clipPath: `circle(${2000 * 2 + 200}px at 40px 40px)`,
