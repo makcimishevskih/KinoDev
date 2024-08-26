@@ -41,6 +41,8 @@ const PersonsListPage = () => {
                      >
                         <div className={css.person__poster}>
                            <img
+                              width={160}
+                              height={230}
                               className={css.img}
                               src={person.photo || placeholder}
                               alt="person"

@@ -27,6 +27,8 @@ const UserPage = () => {
       <div className={css.user}>
          <div className={css.img__wrapper}>
             <img
+               width={200}
+               height={200}
                className={css.img}
                src={user?.picture || placeholder}
                alt="avatar"

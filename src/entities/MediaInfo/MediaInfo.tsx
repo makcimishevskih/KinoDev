@@ -14,6 +14,8 @@ const MediaInfo = () => {
          >
             <div className={css.media__imgContainer}>
                <img
+                  width={222}
+                  height={320}
                   className={css.media__img}
                   src={data?.poster?.url || ""}
                   alt="film"

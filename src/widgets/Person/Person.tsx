@@ -75,10 +75,11 @@ const Person = ({ data }: PersonsProps) => {
    return (
       <div className={css.Person}>
          <div className={css.media}>
-            {/* LINK TO POSTERS */}
             <div className={css.media__link}>
                <div className={css.media__imgContainer}>
                   <img
+                     width={222}
+                     height={320}
                      className={css.media__img}
                      src={data.photo || placeholder}
                      alt="film"

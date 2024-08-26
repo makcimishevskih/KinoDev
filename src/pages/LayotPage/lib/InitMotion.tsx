@@ -1,7 +1,7 @@
 import css from "./InitMotion.module.scss";
 
 import { motion } from "framer-motion";
-import bg from "@src/app/assets/logo-kp/black_background/kinopoisk-logo-colored-on-blackbackground-rus.png";
+import logo from "@src/app/assets/logo-kp/black_background/kinopoisk-logo-colored-on-blackbackground-rus.png";
 
 const InitMotion = () => {
    return (
@@ -26,7 +26,9 @@ const InitMotion = () => {
       >
          <div className={css.img_container}>
             <img
-               src={bg}
+               width="100%"
+               height="100%"
+               src={logo}
                alt="kp-logo"
             />
          </div>

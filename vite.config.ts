@@ -14,6 +14,7 @@ export default defineConfig({
             },
          },
       }),
+
       visualizer() as PluginOption,
       ViteImageOptimizer({
          png: {
@@ -47,6 +48,7 @@ export default defineConfig({
       },
    },
    build: {
+      minify: "terser",
       rollupOptions: {
          output: {
             manualChunks: {

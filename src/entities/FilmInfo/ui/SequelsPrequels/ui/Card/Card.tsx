@@ -13,6 +13,8 @@ const Card = ({ movie: { poster, rating, type, year, name } }: CardI) => {
       <div className={css.card}>
          <div className={css.img__wrapper}>
             <img
+               width={120}
+               height={170}
                className={css.img}
                src={poster && (poster.url || poster.previewUrl || placeholder)}
                alt="logo"

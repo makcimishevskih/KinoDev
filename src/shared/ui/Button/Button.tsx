@@ -54,6 +54,8 @@ const Button = ({
       >
          {img ? (
             <img
+               width={30}
+               height={30}
                className={cn(css.img, imgClassName)}
                src={img}
                alt={imgAlt}
