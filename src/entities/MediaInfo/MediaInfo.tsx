@@ -7,7 +7,6 @@ const MediaInfo = () => {
    const data = mockFilmById;
    return (
       <div className={css.media}>
-         {/* LINK TO POSTERS */}
          <Link
             to="#"
             className={css.media__link}
@@ -23,7 +22,6 @@ const MediaInfo = () => {
             </div>
          </Link>
 
-         {/* VIDEO */}
          {data?.videos?.trailers &&
          data.videos?.trailers[data.videos?.trailers.length - 1].url ? (
             <Link
@@ -40,7 +38,8 @@ const MediaInfo = () => {
                      }
                      frameBorder="0"
                      allowFullScreen
-                  ></iframe>
+                     srcDoc="Loading..."
+                  />
                </div>
                <p className={css.video__caption}>
                   {data.videos?.trailers[data.videos?.trailers.length - 1].name}

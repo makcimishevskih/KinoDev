@@ -70,12 +70,7 @@
          .subtitle {
             @include flex(start, flex-start, 8px);
             flex-wrap: wrap;
-
             @include fontBase(16px, 20px);
-
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
          }
 
          .genre,

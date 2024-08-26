@@ -1,7 +1,8 @@
 @import "../../app/styles/mixins.scss";
 
 .filterSort {
-   @include flex(center, space-between);
+   margin-top: 10px;
+   @include flex(flex-start, space-between, 8px);
 
    user-select: none;
 }
